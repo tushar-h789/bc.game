@@ -13,7 +13,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-dark-gray p-4">
+    <nav className="bg-dark-gray p-4 relative ">
       <div className="max-w-screen-xl mx-auto flex justify-between items-center">
         <div className="flex items-center">
           <Image src={logo} alt="logo" width={100} height={100} />
@@ -38,10 +38,10 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Dropdown Menu */}
+      {/* Mobile Dropdown Menu - overlay without affecting layout */}
       {isMenuOpen && (
-        <div className="md:hidden bg-dark-gray p-4 flex flex-col space-y-4">
-          <button className="bg-transparent text-white py-2 px-4 rounded border border-white">
+        <div className="md:hidden absolute inset-x-0 top-full bg-white/90 text-gray-800 p-4 flex flex-col space-y-4 z-50">
+          <button className="bg-transparent  py-2 px-4 rounded border border-gray-400">
             Log in
           </button>
           <button className="bg-blue-600 text-white py-2 px-4 rounded">

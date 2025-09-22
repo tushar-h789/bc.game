@@ -1,1 +1,86 @@
 @import "tailwindcss";
+
+
+/* styles.css */
+.carousel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .carousel {
+    position: relative;
+  }
+  
+  .embla {
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .embla__container {
+    display: flex;
+    gap: 12px;
+  }
+  
+  .embla__slide {
+    flex: 0 0 60%;
+    max-width: 360px;
+  }
+  @media (min-width: 640px) {
+    .embla__slide { flex: 0 0 40%; }
+  }
+  @media (min-width: 1024px) {
+    .embla__slide { flex: 0 0 20%; }
+  }
+  
+  .game-card {
+    background: #1c1c1c;
+    border-radius: 8px;
+    padding: 20px;
+    color: white;
+    text-align: center;
+  }
+  
+  .game-card__image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .game-card__title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .game-card__multiplier {
+    font-size: 16px;
+    margin: 5px 0;
+  }
+  
+  .game-card__players {
+    font-size: 14px;
+  }
+  
+  .carousel-buttons {
+    display: none;
+  }
+  
+  .carousel-button {
+    background-color: rgba(0,0,0,0.5);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.2);
+    width: 40px;
+    height: 40px;
+    border-radius: 9999px;
+    cursor: pointer;
+    font-size: 22px;
+    display: grid;
+    place-items: center;
+    transition: background-color 150ms ease;
+  }
+  
+  .overlay-button { position: absolute; top: 50%; transform: translateY(-50%); z-index: 10; }
+  .overlay-left { left: 8px; }
+  .overlay-right { right: 8px; }
+  .carousel-button:hover { background-color: rgba(0,0,0,0.7); }
+  

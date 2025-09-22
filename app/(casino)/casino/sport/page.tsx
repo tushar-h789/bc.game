@@ -1,9 +1,11 @@
 import React from "react";
 
-export default function CasinoPage() {
+export default function SportPage() {
   return (
     <div className="p-4 text-white">
-      Casino
+      Sport
     </div>
   );
 }
+
+

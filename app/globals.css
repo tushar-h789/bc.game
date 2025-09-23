@@ -4,6 +4,7 @@
 /* styles.css */
 .carousel-container {
     display: flex;
+    margin: 0px 12px;
     flex-direction: column;
     align-items: center;
   }
@@ -19,11 +20,11 @@
   
   .embla__container {
     display: flex;
-    gap: 12px;
+    gap: 6px;
   }
   
   .embla__slide {
-    flex: 0 0 60%;
+    flex: 0 0 32%;
     max-width: 360px;
   }
   @media (min-width: 640px) {
@@ -34,9 +35,9 @@
   }
   
   .game-card {
-    background: #1c1c1c;
+    /* background: #1c1c1c; */
     border-radius: 8px;
-    padding: 20px;
+    /* padding: 4px; */
     color: white;
     text-align: center;
   }
@@ -66,12 +67,12 @@
   }
   
   .carousel-button {
-    background-color: rgba(0,0,0,0.5);
+    /* background-color: rgba(0,0,0,0.5); */
     color: #fff;
     border: 1px solid rgba(255,255,255,0.2);
     width: 40px;
     height: 40px;
-    border-radius: 9999px;
+    border-radius:9px;
     cursor: pointer;
     font-size: 22px;
     display: grid;

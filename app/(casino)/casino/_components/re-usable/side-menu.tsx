@@ -1,55 +1,62 @@
 "use client";
 
+import Image, { StaticImageData } from "next/image";
 import React from "react";
 import { FaChevronRight } from "react-icons/fa";
+import gameCardImage from "@/public/images/common/icon.png"; 
+import casinoIcon from "@/public/images/menu-item/casino.png"
 
 type MenuSection = {
   id: string;
+  image: string | StaticImageData;
   title: string;
-  items: { id: string; label: string }[];
+  items: { id: string; image: string | StaticImageData; label: string }[];
 };
 
 const SECTIONS: MenuSection[] = [
   {
     id: "casino",
     title: "Casino",
+    image: casinoIcon,
     items: [
-      { id: "game-lobby", label: "Game Lobby" },
-      { id: "favorites", label: "Favorites" },
-      { id: "rb-originals", label: "RB Originals" },
-      { id: "rb-exclusive", label: "RB Exclusive" },
-      { id: "slots", label: "Slots" },
-      { id: "game-shows", label: "Game Shows" },
-      { id: "live-casino", label: "Live Casino" },
-      { id: "hot-games", label: "Hot Games" },
-      { id: "jackpots", label: "Jackpots" },
-      { id: "blackjack", label: "Blackjack" },
-      { id: "new-release", label: "New Release" },
+      { id: "game-lobby", image: gameCardImage, label: "Game Lobby" },
+      { id: "favorites", image: gameCardImage, label: "Favorites" },
+      { id: "rb-originals", image: gameCardImage, label: "RB Originals" },
+      { id: "rb-exclusive", image: gameCardImage, label: "RB Exclusive" },
+      { id: "slots", image: gameCardImage, label: "Slots" },
+      { id: "game-shows", image: gameCardImage, label: "Game Shows" },
+      { id: "live-casino", image: gameCardImage, label: "Live Casino" },
+      { id: "hot-games", image: gameCardImage, label: "Hot Games" },
+      { id: "jackpots", image: gameCardImage, label: "Jackpots" },
+      { id: "blackjack", image: gameCardImage, label: "Blackjack" },
+      { id: "new-release", image: gameCardImage, label: "New Release" },
     ],
   },
   {
     id: "sports",
     title: "Sports",
+    image: gameCardImage,
     items: [
-      { id: "football", label: "Football (Soccer)" },
-      { id: "cricket", label: "Cricket" },
-      { id: "tennis", label: "Tennis" },
-      { id: "basketball", label: "Basketball" },
-      { id: "esports", label: "eSports" },
-      { id: "american-football", label: "American Football" },
-      { id: "ice-hockey", label: "Ice Hockey" },
+      { id: "football", image: gameCardImage, label: "Football (Soccer)" },
+      { id: "cricket", image: gameCardImage, label: "Cricket" },
+      { id: "tennis", image: gameCardImage, label: "Tennis" },
+      { id: "basketball", image: gameCardImage, label: "Basketball" },
+      { id: "esports", image: gameCardImage, label: "eSports" },
+      { id: "american-football", image: gameCardImage, label: "American Football" },
+      { id: "ice-hockey", image: gameCardImage, label: "Ice Hockey" },
     ],
   },
   {
     id: "lottery",
     title: "Lottery",
+    image: gameCardImage,
     items: [
-      { id: "my-bets", label: "My Bets" },
-      { id: "all-lottery", label: "All Lottery" },
-      { id: "results", label: "Results" },
-      { id: "power-lottery", label: "Power Lottery" },
-      { id: "rb-lottery", label: "RB Lottery" },
-      { id: "lottery-draw", label: "Lottery Draw" },
+      { id: "my-bets", image: gameCardImage, label: "My Bets" },
+      { id: "all-lottery", image: gameCardImage, label: "All Lottery" },
+      { id: "results", image: gameCardImage, label: "Results" },
+      { id: "power-lottery", image: gameCardImage, label: "Power Lottery" },
+      { id: "rb-lottery", image: gameCardImage, label: "RB Lottery" },
+      { id: "lottery-draw", image: gameCardImage, label: "Lottery Draw" },
     ],
   },
 ];
@@ -111,6 +118,7 @@ export default function SideMenu({ open, onClose }: SideMenuProps) {
                   onClick={() => toggle(section.id)}
                   aria-expanded={!!isOpen}
                 >
+                  <Image className="w-6 h-6"   src={section.image} alt={section.title} width={20} height={20} />
                   <span className="font-medium">{section.title}</span>
                   <FaChevronRight
                     className={`transition-transform ${isOpen ? "rotate-90" : "rotate-0"}`}
@@ -124,6 +132,7 @@ export default function SideMenu({ open, onClose }: SideMenuProps) {
                         type="button"
                         className="w-full flex items-center justify-between px-6 py-2 text-sm text-gray-200 hover:bg-[#2a3f4a]"
                       >
+                        <Image className="w-6 h-6"   src={item.image} alt={item.label} width={20} height={20} />
                         <span>{item.label}</span>
                         <FaChevronRight className="opacity-60" />
                       </button>

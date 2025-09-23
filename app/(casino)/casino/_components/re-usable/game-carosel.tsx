@@ -23,6 +23,7 @@ export interface GameCarouselHandle {
 }
 
 const GameCarousel = forwardRef<GameCarouselHandle, GameCarouselProps>(({ games }, ref) => {
+  console.log("games", games);
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'start' });
 
   const scrollNext = useCallback(() => {

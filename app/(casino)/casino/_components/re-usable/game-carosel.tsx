@@ -46,7 +46,7 @@ const GameCarousel = forwardRef<GameCarouselHandle, GameCarouselProps>(({ games 
     <div className="carousel-container">
       <div className="carousel relative">
         <div className="embla" ref={emblaRef}>
-          <div className="embla__container">
+          <div className="embla__container ">
             {games.map((game, index) => (
               <div className="embla__slide" key={index}>
                 <GameCard gameData={game} />

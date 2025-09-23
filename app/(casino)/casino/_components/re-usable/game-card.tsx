@@ -17,11 +17,11 @@ const GameCard = ({ gameData }: GameCardProps) => {
   return (
     <div className="game-card">
       <div className="relative w-full aspect-[4/5] overflow-hidden rounded-md">
-        <Image src={gameData.image} alt="game" fill sizes="(max-width: 768px) 50vw, 20vw" className="object-cover" />
+        <Image src={gameData.image} alt="game" fill sizes="(max-width: 768px) " className="object-cover w-full" />
       </div>
       <div className="game-card__details">
-        <h3 className="game-card__title">{gameData.title}</h3>
-        <p className="game-card__multiplier">{gameData.multiplier}x</p>
+        {/* <h3 className="game-card__title">{gameData.title}</h3>
+        <p className="game-card__multiplier">{gameData.multiplier}x</p> */}
         <p className="game-card__players">{gameData.players} Playing</p>
       </div>
     </div>

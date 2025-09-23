@@ -4,6 +4,7 @@ import Banner from "./_components/re-usable/banner";
 import bannerImg from "@/public/images/common/banner-img.png";
 import GameCarousel, { GameCarouselHandle } from "./_components/re-usable/game-carosel";
 import gameCardImage from "@/public/images/common/game-card-img.png"
+import BigWin from "./_components/home/bigwin";
 
 const games = [
   {
@@ -46,6 +47,10 @@ export default function CasinoHome() {
         />
       </div>
 
+      <div>
+        <BigWin />
+      </div>
+
       {/* Hot game carosel */}
       <div className="app-container">
         <div className="flex items-center justify-between mb-2">
@@ -58,5 +63,8 @@ export default function CasinoHome() {
         <GameCarousel ref={carouselRef} games={games} />
       </div>
     </div>
+
+    // Bigwin section
+    
   );
 }

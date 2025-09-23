@@ -7,6 +7,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import SideMenu from "./side-menu";
+import type { IconType } from "react-icons";
+import type { StaticImageData } from "next/image";
 
 export default function FooterTab() {
   const pathname = usePathname();
@@ -14,78 +16,91 @@ export default function FooterTab() {
 
   const isActive = (href: string) => pathname === href;
 
+  type TabItem = {
+    key: string;
+    label: string;
+    type: "link" | "menu";
+    href?: string;
+    Icon?: IconType;
+    imageSrc?: StaticImageData;
+  };
+
+  const tabs: TabItem[] = [
+    { key: "home", label: "Home", type: "link", href: "/casino", Icon: FaHome },
+    {
+      key: "casino",
+      label: "Casino",
+      type: "link",
+      href: "/casino/casino",
+      imageSrc: casinoIcon,
+    },
+    {
+      key: "explore",
+      label: "Explore",
+      type: "link",
+      href: "/casino/explore",
+      Icon: FaSearch,
+    },
+    {
+      key: "sport",
+      label: "Sport",
+      type: "link",
+      href: "/casino/sport",
+      Icon: FaBasketballBall,
+    },
+    { key: "menu", label: "Menu", type: "menu", Icon: FaBars },
+  ];
+
   return (
-    <div className="bg-[#213744] p-4 fixed bottom-0 left-0 w-full flex justify-between items-center text-white">
-      {/* Home Tab */}
-      <Link
-        href="/casino"
-        className={`flex flex-col items-center ${
-          isActive("/casino") ? "text-white" : "text-gray-400"
-        }`}
-        aria-current={isActive("/casino") ? "page" : undefined}
-      >
-        <FaHome size={24} />
-        <span className="text-sm mt-1">Home</span>
-        {isActive("/casino") && <div className="w-full h-1 bg-blue-500 mt-1" />}
-      </Link>
+    <div className="bg-[#213744] p-3 fixed bottom-0 left-0 right-0 z-[60] w-full grid grid-cols-5 items-center text-white">
+      {tabs.map((tab) => {
+        if (tab.type === "link" && tab.href) {
+          const active = isActive(tab.href);
+          return (
+            <Link
+              key={tab.key}
+              href={tab.href}
+              className={`flex flex-col items-center ${
+                active ? "text-white" : "text-gray-400"
+              }`}
+              aria-current={active ? "page" : undefined}
+            >
+              {tab.imageSrc ? (
+                <Image
+                  src={tab.imageSrc}
+                  alt={`${tab.label.toLowerCase()} icon`}
+                  width={25}
+                  height={25}
+                />
+              ) : tab.Icon ? (
+                <tab.Icon size={24} />
+              ) : null}
+              <span className="text-sm mt-1">{tab.label}</span>
+              {active && <div className="w-full h-1 bg-blue-500 mt-1" />}
+            </Link>
+          );
+        }
 
-      {/* Casino Tab */}
-      <Link
-        href="/casino/casino"
-        className={`flex flex-col items-center ${
-          isActive("/casino/casino") ? "text-white" : "text-gray-400"
-        }`}
-        aria-current={isActive("/casino/casino") ? "page" : undefined}
-      >
-        <Image src={casinoIcon} alt="casino icon" width={25} height={25} />
-        <span className="text-sm mt-1">Casino</span>
-        {isActive("/casino/casino") && (
-          <div className="w-full h-1 bg-blue-500 mt-1" />
-        )}
-      </Link>
+        if (tab.type === "menu") {
+          const MenuIcon = tab.Icon ?? FaBars;
+          return (
+            <button
+              key={tab.key}
+              type="button"
+              onClick={() => setMenuOpen(true)}
+              className="flex flex-col items-center text-gray-400 focus:outline-none"
+              aria-haspopup="dialog"
+              aria-expanded={menuOpen}
+              aria-label="Open menu"
+            >
+              <MenuIcon size={24} />
+              <span className="text-sm mt-1">{tab.label}</span>
+            </button>
+          );
+        }
 
-      {/* Explore Tab */}
-      <Link
-        href="/casino/explore"
-        className={`flex flex-col items-center ${
-          isActive("/casino/explore") ? "text-white" : "text-gray-400"
-        }`}
-        aria-current={isActive("/casino/explore") ? "page" : undefined}
-      >
-        <FaSearch size={24} />
-        <span className="text-sm mt-1">Explore</span>
-        {isActive("/casino/explore") && (
-          <div className="w-full h-1 bg-blue-500 mt-1" />
-        )}
-      </Link>
-
-      {/* Sports Tab */}
-      <Link
-        href="/casino/sport"
-        className={`flex flex-col items-center ${
-          isActive("/casino/sport") ? "text-white" : "text-gray-400"
-        }`}
-        aria-current={isActive("/casino/sport") ? "page" : undefined}
-      >
-        <FaBasketballBall size={24} />
-        <span className="text-sm mt-1">Sport</span>
-        {isActive("/casino/sport") && (
-          <div className="w-full h-1 bg-blue-500 mt-1" />
-        )}
-      </Link>
-
-      {/* Menu Tab */}
-      <button
-        type="button"
-        onClick={() => setMenuOpen(true)}
-        className="flex flex-col items-center text-gray-400 focus:outline-none"
-        aria-haspopup="dialog"
-        aria-expanded={menuOpen}
-        aria-label="Open menu"
-      >
-        <FaBars size={24} />
-        <span className="text-sm mt-1">Menu</span>
-      </button>
+        return null;
+      })}
 
       <SideMenu open={menuOpen} onClose={() => setMenuOpen(false)} />
     </div>

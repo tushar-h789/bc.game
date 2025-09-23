@@ -75,10 +75,14 @@ export default function SideMenu({ open, onClose }: SideMenuProps) {
     setExpanded((prev) => ({ ...prev, [sectionId]: !prev[sectionId] }));
   };
 
+  if (!open) {
+    return null;
+  }
+
   return (
     <div
       aria-hidden={!open}
-      className={`fixed inset-0 z-50 ${open ? "pointer-events-auto" : "pointer-events-none"}`}
+      className={"fixed inset-0 z-50 pointer-events-auto"}
     >
       {/* Backdrop */}
       <div

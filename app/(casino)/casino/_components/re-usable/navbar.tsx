@@ -13,8 +13,8 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-dark-gray p-4 relative ">
-      <div className="max-w-screen-xl mx-auto flex justify-between items-center">
+    <nav className="container bg-dark-gray p-4 relative ">
+      <div className="flex justify-between items-center">
         <div className="flex items-center">
           <Image src={logo} alt="logo" width={100} height={100} />
           <span className="text-white text-lg ml-2 font-semibold">Rellbet</span>

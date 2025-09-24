@@ -4,7 +4,22 @@ import Image, { StaticImageData } from "next/image";
 import React from "react";
 import { FaChevronRight } from "react-icons/fa";
 import gameCardImage from "@/public/images/common/icon.png"; 
-import casinoIcon from "@/public/images/menu-item/casino.png"
+import casinoIcon from "@/public/images/menu-item/casino.png";
+import sportsIcon from "@/public/images/menu-item/sports.png";
+import lotteryIcon from "@/public/images/menu-item/lottery.png";
+import hotGamesIcon from "@/public/images/menu-item/hot-games.png";
+import newReleasesIcon from "@/public/images/menu-item/new-releases.png";
+import slotsIcon from "@/public/images/menu-item/slots.png";
+import bonusBuyIcon from "@/public/images/menu-item/bonus-buy.png";
+import liveCasinoIcon from "@/public/images/menu-item/live-casino.png";
+import tableGamesIcon from "@/public/images/menu-item/table-games.png";
+
+import gameShowsIcon from "@/public/images/menu-item/game shows.png";
+import bingoIcon from "@/public/images/menu-item/bingo.png";
+import themesIcon from "@/public/images/menu-item/themes.png";
+import provideIcon from "@/public/images/menu-item/provide.png";
+
+
 
 type MenuSection = {
   id: string;
@@ -19,23 +34,23 @@ const SECTIONS: MenuSection[] = [
     title: "Casino",
     image: casinoIcon,
     items: [
-      { id: "game-lobby", image: gameCardImage, label: "Game Lobby" },
-      { id: "favorites", image: gameCardImage, label: "Favorites" },
-      { id: "rb-originals", image: gameCardImage, label: "RB Originals" },
-      { id: "rb-exclusive", image: gameCardImage, label: "RB Exclusive" },
-      { id: "slots", image: gameCardImage, label: "Slots" },
-      { id: "game-shows", image: gameCardImage, label: "Game Shows" },
-      { id: "live-casino", image: gameCardImage, label: "Live Casino" },
-      { id: "hot-games", image: gameCardImage, label: "Hot Games" },
-      { id: "jackpots", image: gameCardImage, label: "Jackpots" },
-      { id: "blackjack", image: gameCardImage, label: "Blackjack" },
-      { id: "new-release", image: gameCardImage, label: "New Release" },
+      { id: "Hot Games", image: hotGamesIcon, label: "Game Lobby" },
+      { id: "New Releases", image: newReleasesIcon, label: "Favorites" },
+      { id: "Slots", image: slotsIcon, label: "RB Originals" },
+      { id: "Bonus Buy", image: bonusBuyIcon, label: "RB Exclusive" },
+      { id: "Live Casino", image: liveCasinoIcon, label: "Slots" },
+      { id: "Table Games", image: tableGamesIcon, label: "Game Shows" },
+      { id: "Game Shows", image: gameShowsIcon, label: "Live Casino" },
+      { id: "Bingo", image: bingoIcon, label: "Hot Games" },
+      { id: "Themes", image: themesIcon, label: "Jackpots" },
+      { id: "Provide", image: provideIcon, label: "Blackjack" },
+
     ],
   },
   {
     id: "sports",
     title: "Sports",
-    image: gameCardImage,
+    image: sportsIcon,
     items: [
       { id: "football", image: gameCardImage, label: "Football (Soccer)" },
       { id: "cricket", image: gameCardImage, label: "Cricket" },
@@ -49,7 +64,7 @@ const SECTIONS: MenuSection[] = [
   {
     id: "lottery",
     title: "Lottery",
-    image: gameCardImage,
+    image: lotteryIcon,
     items: [
       { id: "my-bets", image: gameCardImage, label: "My Bets" },
       { id: "all-lottery", image: gameCardImage, label: "All Lottery" },
@@ -57,6 +72,60 @@ const SECTIONS: MenuSection[] = [
       { id: "power-lottery", image: gameCardImage, label: "Power Lottery" },
       { id: "rb-lottery", image: gameCardImage, label: "RB Lottery" },
       { id: "lottery-draw", image: gameCardImage, label: "Lottery Draw" },
+    ],
+  },
+  {
+    id: "casino",
+    title: "Casino",
+    image: casinoIcon,
+    items: [
+      { id: "Hot Games", image: hotGamesIcon, label: "Game Lobby" },
+      { id: "New Releases", image: newReleasesIcon, label: "Favorites" },
+      { id: "Slots", image: slotsIcon, label: "RB Originals" },
+      { id: "Bonus Buy", image: bonusBuyIcon, label: "RB Exclusive" },
+      { id: "Live Casino", image: liveCasinoIcon, label: "Slots" },
+      { id: "Table Games", image: tableGamesIcon, label: "Game Shows" },
+      { id: "Game Shows", image: gameShowsIcon, label: "Live Casino" },
+      { id: "Bingo", image: bingoIcon, label: "Hot Games" },
+      { id: "Themes", image: themesIcon, label: "Jackpots" },
+      { id: "Provide", image: provideIcon, label: "Blackjack" },
+
+    ],
+  },
+  {
+    id: "casino",
+    title: "Casino",
+    image: casinoIcon,
+    items: [
+      { id: "Hot Games", image: hotGamesIcon, label: "Game Lobby" },
+      { id: "New Releases", image: newReleasesIcon, label: "Favorites" },
+      { id: "Slots", image: slotsIcon, label: "RB Originals" },
+      { id: "Bonus Buy", image: bonusBuyIcon, label: "RB Exclusive" },
+      { id: "Live Casino", image: liveCasinoIcon, label: "Slots" },
+      { id: "Table Games", image: tableGamesIcon, label: "Game Shows" },
+      { id: "Game Shows", image: gameShowsIcon, label: "Live Casino" },
+      { id: "Bingo", image: bingoIcon, label: "Hot Games" },
+      { id: "Themes", image: themesIcon, label: "Jackpots" },
+      { id: "Provide", image: provideIcon, label: "Blackjack" },
+
+    ],
+  },
+  {
+    id: "casino",
+    title: "Casino",
+    image: casinoIcon,
+    items: [
+      { id: "Hot Games", image: hotGamesIcon, label: "Game Lobby" },
+      { id: "New Releases", image: newReleasesIcon, label: "Favorites" },
+      { id: "Slots", image: slotsIcon, label: "RB Originals" },
+      { id: "Bonus Buy", image: bonusBuyIcon, label: "RB Exclusive" },
+      { id: "Live Casino", image: liveCasinoIcon, label: "Slots" },
+      { id: "Table Games", image: tableGamesIcon, label: "Game Shows" },
+      { id: "Game Shows", image: gameShowsIcon, label: "Live Casino" },
+      { id: "Bingo", image: bingoIcon, label: "Hot Games" },
+      { id: "Themes", image: themesIcon, label: "Jackpots" },
+      { id: "Provide", image: provideIcon, label: "Blackjack" },
+
     ],
   },
 ];
@@ -101,15 +170,16 @@ export default function SideMenu({ open, onClose }: SideMenuProps) {
 
       {/* Panel */}
       <aside
-        className={`absolute right-0 top-0 h-full w-[86%] max-w-[380px] bg-[#1e2f3a] text-white shadow-xl transform transition-transform duration-300 ease-out ${
+        className={`absolute right-0 top-0 h-auto w-[86%] max-w-[380px] bg-[#1e2f3a] text-white shadow-xl transform transition-transform duration-300 ease-out ${
           open ? "translate-x-0" : "translate-x-full"
         }`}
         role="dialog"
         aria-modal="true"
       >
         <div className="h-full overflow-y-auto">
-          {SECTIONS.map((section) => {
-            const isOpen = expanded[section.id];
+          {SECTIONS.map((section, index) => {
+            const sectionKey = `${section.id}-${index}`;
+            const isOpen = expanded[sectionKey];
             return (
               <div key={section.id} className="border-t border-[#2a3f4a]">
                 <button

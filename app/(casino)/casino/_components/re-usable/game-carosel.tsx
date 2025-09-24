@@ -56,7 +56,7 @@ const GameCarousel = forwardRef<GameCarouselHandle, GameCarouselProps>(
 
     return (
       <div className="container ">
-        <div className="flex items-center justify-between mb-5 mx-5">
+        <div className="flex items-center justify-between mb-5 mx-2">
           <div className="flex items-center gap-2">
             {titleIcon ? (
               <Image

@@ -26,13 +26,13 @@ const games = [
     image: gameCardImage,
     title: "LIMBO",
     multiplier: "500",
-    players: "2,110",
+    players: "1,110",
   },
   {
     image: gameCardImage,
     title: "LIMBO",
     multiplier: "500",
-    players: "2,110",
+    players: "4,240",
   },
 ];
 

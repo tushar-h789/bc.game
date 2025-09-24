@@ -7,6 +7,7 @@ import GameCarousel, {
 } from "./_components/re-usable/game-carosel";
 import gameCardImage from "@/public/images/common/game-card-img.png";
 import BigWin from "./_components/home/bigwin";
+import casinoIcon from "@/public/images/common/icon.png";
 
 const games = [
   {
@@ -19,7 +20,7 @@ const games = [
     image: gameCardImage,
     title: "LIMBO",
     multiplier: "500",
-    players: "2,110",
+    players: "3,410",
   },
   {
     image: gameCardImage,
@@ -51,9 +52,14 @@ export default function CasinoHome() {
       <div>
         <BigWin />
       </div>
-      <div >
+        <div >
         {/* Hot game carosel */}
-        <GameCarousel ref={carouselRef} title="Hot Games" games={games} />
+          <GameCarousel
+            ref={carouselRef}
+            title="Hot Games"
+            titleIcon={casinoIcon}
+            games={games}
+          />
       </div>
     </div>
   );

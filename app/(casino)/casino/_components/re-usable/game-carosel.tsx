@@ -1,10 +1,11 @@
 // GameCarousel.tsx
-'use client'
+"use client";
 
-import React, { useCallback, useImperativeHandle, forwardRef } from 'react';
-import useEmblaCarousel from 'embla-carousel-react';
-import type { StaticImageData } from 'next/image';
-import GameCard from './game-card';
+import React, { useCallback, useImperativeHandle, forwardRef } from "react";
+import useEmblaCarousel from "embla-carousel-react";
+import Image, { type StaticImageData } from "next/image";
+import GameCard from "./game-card";
+import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 
 interface GameItem {
   image: string | StaticImageData;
@@ -16,6 +17,7 @@ interface GameItem {
 interface GameCarouselProps {
   games: GameItem[];
   title: string;
+  titleIcon?: string | StaticImageData;
 }
 
 export interface GameCarouselHandle {
@@ -23,53 +25,85 @@ export interface GameCarouselHandle {
   prev: () => void;
 }
 
-const GameCarousel = forwardRef<GameCarouselHandle, GameCarouselProps>(({ games, title }, ref) => {
-  console.log("games", games);
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'start' });
+const GameCarousel = forwardRef<GameCarouselHandle, GameCarouselProps>(
+  ({ games, title, titleIcon }, ref) => {
+    console.log("games", games);
+    const [emblaRef, emblaApi] = useEmblaCarousel({
+      loop: true,
+      align: "start",
+    });
 
-  const scrollNext = useCallback(() => {
-    if (emblaApi) {
-      emblaApi.scrollNext();
-    }
-  }, [emblaApi]);
+    const scrollNext = useCallback(() => {
+      if (emblaApi) {
+        emblaApi.scrollNext();
+      }
+    }, [emblaApi]);
 
-  const scrollPrev = useCallback(() => {
-    if (emblaApi) {
-      emblaApi.scrollPrev();
-    }
-  }, [emblaApi]);
+    const scrollPrev = useCallback(() => {
+      if (emblaApi) {
+        emblaApi.scrollPrev();
+      }
+    }, [emblaApi]);
 
-  useImperativeHandle(ref, () => ({
-    next: scrollNext,
-    prev: scrollPrev,
-  }), [scrollNext, scrollPrev]);
+    useImperativeHandle(
+      ref,
+      () => ({
+        next: scrollNext,
+        prev: scrollPrev,
+      }),
+      [scrollNext, scrollPrev]
+    );
 
-  return (
-    <div className="container ">
-      <div className="flex items-center justify-between mb-2">
-        <h2>{title}</h2>
-        <div className="flex items-center gap-2">
-          <button onClick={scrollPrev} className="carousel-button" aria-label="Previous">‹</button>
-          <button onClick={scrollNext} className="carousel-button" aria-label="Next">›</button>
+    return (
+      <div className="container ">
+        <div className="flex items-center justify-between mb-5 mx-5">
+          <div className="flex items-center gap-2">
+            {titleIcon ? (
+              <Image
+                src={titleIcon}
+                alt="section icon"
+                width={24}
+                height={24}
+              />
+            ) : null}
+            <h2 className="text-xl font-bold">{title}</h2>
+          </div>
+          <div className="flex items-center gap-2">
+            <button className="border border-gray-700 px-3 py-[10px] rounded-xl text-sm">All</button>
+            <button
+              onClick={scrollPrev}
+              className="carousel-button"
+              aria-label="Previous"
+            >
+              <BiChevronLeft />
+            </button>
+            <button
+              onClick={scrollNext}
+              className="carousel-button"
+              aria-label="Next"
+            >
+              <BiChevronRight />
+            </button>
+          </div>
         </div>
-      </div>
-      <div className="carousel-container">
-        <div className="carousel relative">
-          <div className="embla" ref={emblaRef}>
-            <div className="embla__container ">
-              {games.map((game, index) => (
-                <div className="embla__slide" key={index}>
-                  <GameCard gameData={game} />
-                </div>
-              ))}
+        <div className="carousel-container">
+          <div className="carousel relative">
+            <div className="embla" ref={emblaRef}>
+              <div className="embla__container ">
+                {games.map((game, index) => (
+                  <div className="embla__slide" key={index}>
+                    <GameCard gameData={game} />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  );
-});
+    );
+  }
+);
 
-GameCarousel.displayName = 'GameCarousel';
+GameCarousel.displayName = "GameCarousel";
 
 export default GameCarousel;

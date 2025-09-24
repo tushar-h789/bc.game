@@ -11,7 +11,7 @@ export default function BigWin() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#0b1e2d] flex items-center justify-center p-6">
+    <div className="min-h-screen  flex items-center justify-center p-6">
       <div className="bg-[#0f2a3c] rounded-xl p-4 w-full max-w-4xl">
         {/* Header */}
         <div className="flex items-center mb-4">

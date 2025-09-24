@@ -15,6 +15,7 @@ interface GameItem {
 
 interface GameCarouselProps {
   games: GameItem[];
+  title: string;
 }
 
 export interface GameCarouselHandle {
@@ -22,7 +23,7 @@ export interface GameCarouselHandle {
   prev: () => void;
 }
 
-const GameCarousel = forwardRef<GameCarouselHandle, GameCarouselProps>(({ games }, ref) => {
+const GameCarousel = forwardRef<GameCarouselHandle, GameCarouselProps>(({ games, title }, ref) => {
   console.log("games", games);
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'start' });
 
@@ -44,15 +45,24 @@ const GameCarousel = forwardRef<GameCarouselHandle, GameCarouselProps>(({ games 
   }), [scrollNext, scrollPrev]);
 
   return (
-    <div className="carousel-container">
-      <div className="carousel relative">
-        <div className="embla" ref={emblaRef}>
-          <div className="embla__container ">
-            {games.map((game, index) => (
-              <div className="embla__slide" key={index}>
-                <GameCard gameData={game} />
-              </div>
-            ))}
+    <div className="container ">
+      <div className="flex items-center justify-between mb-2">
+        <h2>{title}</h2>
+        <div className="flex items-center gap-2">
+          <button onClick={scrollPrev} className="carousel-button" aria-label="Previous">‹</button>
+          <button onClick={scrollNext} className="carousel-button" aria-label="Next">›</button>
+        </div>
+      </div>
+      <div className="carousel-container">
+        <div className="carousel relative">
+          <div className="embla" ref={emblaRef}>
+            <div className="embla__container ">
+              {games.map((game, index) => (
+                <div className="embla__slide" key={index}>
+                  <GameCard gameData={game} />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

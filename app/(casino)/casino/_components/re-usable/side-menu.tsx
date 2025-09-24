@@ -5,6 +5,18 @@ import React from "react";
 import { FaChevronRight } from "react-icons/fa";
 import gameCardImage from "@/public/images/common/icon.png";
 import casinoIcon from "@/public/images/menu-item/casino.png";
+import sportsIcon from "@/public/images/menu-item/sports.png";
+import lotteryIcon from "@/public/images/menu-item/lottery.png";
+import hotGamesIcon from "@/public/images/menu-item/hot-games.png";
+import newReleasesIcon from "@/public/images/menu-item/release.png";
+import slotsIcon from "@/public/images/menu-item/slots.png";
+import bonusBuyIcon from "@/public/images/menu-item/bonus.png";
+import liveCasinoIcon from "@/public/images/menu-item/live-casino.png";
+import tableGamesIcon from "@/public/images/menu-item/table-games.png";
+import gameShowsIcon from "@/public/images/menu-item/game-shows.png";
+import bingoIcon from "@/public/images/menu-item/bingo.png";
+import themesIcon from "@/public/images/menu-item/themes.png";
+import provideIcon from "@/public/images/menu-item/provide.png";
 
 type MenuSection = {
   id: string;
@@ -19,23 +31,22 @@ const SECTIONS: MenuSection[] = [
     title: "Casino",
     image: casinoIcon,
     items: [
-      { id: "game-lobby", image: gameCardImage, label: "Game Lobby" },
-      { id: "favorites", image: gameCardImage, label: "Favorites" },
-      { id: "rb-originals", image: gameCardImage, label: "RB Originals" },
-      { id: "rb-exclusive", image: gameCardImage, label: "RB Exclusive" },
-      { id: "slots", image: gameCardImage, label: "Slots" },
-      { id: "game-shows", image: gameCardImage, label: "Game Shows" },
-      { id: "live-casino", image: gameCardImage, label: "Live Casino" },
-      { id: "hot-games", image: gameCardImage, label: "Hot Games" },
-      { id: "jackpots", image: gameCardImage, label: "Jackpots" },
-      { id: "blackjack", image: gameCardImage, label: "Blackjack" },
-      { id: "new-release", image: gameCardImage, label: "New Release" },
+      { id: "Hot Games", image: hotGamesIcon, label: "Game Lobby" },
+      { id: "New Releases", image: newReleasesIcon, label: "Favorites" },
+      { id: "Slots", image: slotsIcon, label: "RB Originals" },
+      { id: "Bonus Buy", image: bonusBuyIcon, label: "RB Exclusive" },
+      { id: "Live Casino", image: liveCasinoIcon, label: "Slots" },
+      { id: "Table Games", image: tableGamesIcon, label: "Game Shows" },
+      { id: "Game Shows", image: gameShowsIcon, label: "Live Casino" },
+      { id: "Bingo", image: bingoIcon, label: "Hot Games" },
+      { id: "Themes", image: themesIcon, label: "Jackpots" },
+      { id: "Provide", image: provideIcon, label: "Blackjack" },
     ],
   },
   {
     id: "sports",
     title: "Sports",
-    image: gameCardImage,
+    image: sportsIcon,
     items: [
       { id: "football", image: gameCardImage, label: "Football (Soccer)" },
       { id: "cricket", image: gameCardImage, label: "Cricket" },
@@ -53,7 +64,7 @@ const SECTIONS: MenuSection[] = [
   {
     id: "lottery",
     title: "Lottery",
-    image: gameCardImage,
+    image: lotteryIcon,
     items: [
       { id: "my-bets", image: gameCardImage, label: "My Bets" },
       { id: "all-lottery", image: gameCardImage, label: "All Lottery" },
@@ -61,6 +72,74 @@ const SECTIONS: MenuSection[] = [
       { id: "power-lottery", image: gameCardImage, label: "Power Lottery" },
       { id: "rb-lottery", image: gameCardImage, label: "RB Lottery" },
       { id: "lottery-draw", image: gameCardImage, label: "Lottery Draw" },
+    ],
+  },
+  {
+    id: "Responsible-Gambling",
+    title: "Responsible Gambling",
+    image: casinoIcon,
+    items: [
+      { id: "Responsible-Gambling", image: hotGamesIcon, label: "Game Lobby" },
+      { id: "New Releases", image: newReleasesIcon, label: "Favorites" },
+      { id: "Slots", image: slotsIcon, label: "RB Originals" },
+      { id: "Bonus Buy", image: bonusBuyIcon, label: "RB Exclusive" },
+      { id: "Live Casino", image: liveCasinoIcon, label: "Slots" },
+      { id: "Table Games", image: tableGamesIcon, label: "Game Shows" },
+      { id: "Game Shows", image: gameShowsIcon, label: "Live Casino" },
+      { id: "Bingo", image: bingoIcon, label: "Hot Games" },
+      { id: "Themes", image: themesIcon, label: "Jackpots" },
+      { id: "Provide", image: provideIcon, label: "Blackjack" },
+    ],
+  },
+  {
+    id: "About-Us",
+    title: "About Us",
+    image: casinoIcon,
+    items: [
+      { id: "About-Us", image: hotGamesIcon, label: "Game Lobby" },
+      { id: "New Releases", image: newReleasesIcon, label: "Favorites" },
+      { id: "Slots", image: slotsIcon, label: "RB Originals" },
+      { id: "Bonus Buy", image: bonusBuyIcon, label: "RB Exclusive" },
+      { id: "Live Casino", image: liveCasinoIcon, label: "Slots" },
+      { id: "Table Games", image: tableGamesIcon, label: "Game Shows" },
+      { id: "Game Shows", image: gameShowsIcon, label: "Live Casino" },
+      { id: "Bingo", image: bingoIcon, label: "Hot Games" },
+      { id: "Themes", image: themesIcon, label: "Jackpots" },
+      { id: "Provide", image: provideIcon, label: "Blackjack" },
+    ],
+  },
+  {
+    id: "Sponsorship",
+    title: "Sponsorship",
+    image: casinoIcon,
+    items: [
+      { id: "Hot Games", image: hotGamesIcon, label: "Game Lobby" },
+      { id: "New Releases", image: newReleasesIcon, label: "Favorites" },
+      { id: "Slots", image: slotsIcon, label: "RB Originals" },
+      { id: "Bonus Buy", image: bonusBuyIcon, label: "RB Exclusive" },
+      { id: "Live Casino", image: liveCasinoIcon, label: "Slots" },
+      { id: "Table Games", image: tableGamesIcon, label: "Game Shows" },
+      { id: "Game Shows", image: gameShowsIcon, label: "Live Casino" },
+      { id: "Bingo", image: bingoIcon, label: "Hot Games" },
+      { id: "Themes", image: themesIcon, label: "Jackpots" },
+      { id: "Provide", image: provideIcon, label: "Blackjack" },
+    ],
+  },
+  {
+    id: "Help-Center",
+    title: "Help Center",
+    image: casinoIcon,
+    items: [
+      { id: "Hot Games", image: hotGamesIcon, label: "Game Lobby" },
+      { id: "New Releases", image: newReleasesIcon, label: "Favorites" },
+      { id: "Slots", image: slotsIcon, label: "RB Originals" },
+      { id: "Bonus Buy", image: bonusBuyIcon, label: "RB Exclusive" },
+      { id: "Live Casino", image: liveCasinoIcon, label: "Slots" },
+      { id: "Table Games", image: tableGamesIcon, label: "Game Shows" },
+      { id: "Game Shows", image: gameShowsIcon, label: "Live Casino" },
+      { id: "Bingo", image: bingoIcon, label: "Hot Games" },
+      { id: "Themes", image: themesIcon, label: "Jackpots" },
+      { id: "Provide", image: provideIcon, label: "Blackjack" },
     ],
   },
 ];
@@ -115,26 +194,30 @@ export default function SideMenu({ open, onClose }: SideMenuProps) {
           {SECTIONS.map((section) => {
             const isOpen = expanded[section.id];
             return (
-              <div key={section.id} className="border-t border-[#2a3f4a]">
+              <div key={section.id} className="">
                 <button
                   type="button"
-                  className="w-full flex items-center justify-between px-4 py-3 hover:bg-[#264050]"
+                  className="w-full flex items-center justify-between mb-2 px-4 py-3 bg-[#213744]"
                   onClick={() => toggle(section.id)}
                   aria-expanded={!!isOpen}
                 >
-                  <Image
-                    className="w-6 h-6"
-                    src={section.image}
-                    alt={section.title}
-                    width={20}
-                    height={20}
-                  />
-                  <span className="font-medium">{section.title}</span>
-                  <FaChevronRight
-                    className={`transition-transform ${
-                      isOpen ? "rotate-90" : "rotate-0"
-                    }`}
-                  />
+                  <div className="flex items-center gap-2">
+                    <Image
+                      className="w-6 h-6"
+                      src={section.image}
+                      alt={section.title}
+                      width={20}
+                      height={20}
+                    />
+                    <span className="font-medium">{section.title}</span>
+                  </div>
+                  <div>
+                    <FaChevronRight
+                      className={`transition-transform ${
+                        isOpen ? "rotate-90" : "rotate-0"
+                      }`}
+                    />
+                  </div>
                 </button>
                 {isOpen && (
                   <div className="pb-2">
@@ -144,15 +227,19 @@ export default function SideMenu({ open, onClose }: SideMenuProps) {
                         type="button"
                         className="w-full flex items-center justify-between px-6 py-2 text-sm text-gray-200 hover:bg-[#2a3f4a]"
                       >
-                        <Image
-                          className="w-6 h-6"
-                          src={item.image}
-                          alt={item.label}
-                          width={20}
-                          height={20}
-                        />
-                        <span>{item.label}</span>
-                        <FaChevronRight className="opacity-60" />
+                        <div className="flex items-center gap-2">
+                          <Image
+                            className="w-6 h-6"
+                            src={item.image}
+                            alt={item.label}
+                            width={20}
+                            height={20}
+                          />
+                          <span>{item.label}</span>
+                        </div>
+                        <div>
+                          <FaChevronRight className="opacity-60" />
+                        </div>
                       </button>
                     ))}
                   </div>

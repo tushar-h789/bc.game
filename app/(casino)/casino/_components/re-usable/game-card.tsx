@@ -28,7 +28,7 @@ const GameCard = ({ gameData }: GameCardProps) => {
       <div className="game-card__details">
         {/* <h3 className="game-card__title">{gameData.title}</h3>
         <p className="game-card__multiplier">{gameData.multiplier}x</p> */}
-        <p className="game-card__players flex items-center">
+        <p className="game-card__players flex items-center mt-2">
           <span
             className="w-2 h-2 rounded-full mr-2"
             style={{ backgroundColor: "#00F480" }}

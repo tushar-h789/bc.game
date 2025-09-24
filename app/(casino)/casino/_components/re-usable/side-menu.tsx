@@ -3,8 +3,8 @@
 import Image, { StaticImageData } from "next/image";
 import React from "react";
 import { FaChevronRight } from "react-icons/fa";
-import gameCardImage from "@/public/images/common/icon.png"; 
-import casinoIcon from "@/public/images/menu-item/casino.png"
+import gameCardImage from "@/public/images/common/icon.png";
+import casinoIcon from "@/public/images/menu-item/casino.png";
 
 type MenuSection = {
   id: string;
@@ -42,7 +42,11 @@ const SECTIONS: MenuSection[] = [
       { id: "tennis", image: gameCardImage, label: "Tennis" },
       { id: "basketball", image: gameCardImage, label: "Basketball" },
       { id: "esports", image: gameCardImage, label: "eSports" },
-      { id: "american-football", image: gameCardImage, label: "American Football" },
+      {
+        id: "american-football",
+        image: gameCardImage,
+        label: "American Football",
+      },
       { id: "ice-hockey", image: gameCardImage, label: "Ice Hockey" },
     ],
   },
@@ -118,10 +122,18 @@ export default function SideMenu({ open, onClose }: SideMenuProps) {
                   onClick={() => toggle(section.id)}
                   aria-expanded={!!isOpen}
                 >
-                  <Image className="w-6 h-6"   src={section.image} alt={section.title} width={20} height={20} />
+                  <Image
+                    className="w-6 h-6"
+                    src={section.image}
+                    alt={section.title}
+                    width={20}
+                    height={20}
+                  />
                   <span className="font-medium">{section.title}</span>
                   <FaChevronRight
-                    className={`transition-transform ${isOpen ? "rotate-90" : "rotate-0"}`}
+                    className={`transition-transform ${
+                      isOpen ? "rotate-90" : "rotate-0"
+                    }`}
                   />
                 </button>
                 {isOpen && (
@@ -132,7 +144,13 @@ export default function SideMenu({ open, onClose }: SideMenuProps) {
                         type="button"
                         className="w-full flex items-center justify-between px-6 py-2 text-sm text-gray-200 hover:bg-[#2a3f4a]"
                       >
-                        <Image className="w-6 h-6"   src={item.image} alt={item.label} width={20} height={20} />
+                        <Image
+                          className="w-6 h-6"
+                          src={item.image}
+                          alt={item.label}
+                          width={20}
+                          height={20}
+                        />
                         <span>{item.label}</span>
                         <FaChevronRight className="opacity-60" />
                       </button>
@@ -147,5 +165,3 @@ export default function SideMenu({ open, onClose }: SideMenuProps) {
     </div>
   );
 }
-
-

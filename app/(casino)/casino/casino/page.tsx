@@ -33,6 +33,241 @@ const games = [
     players: "4,240",
   },
 ];
+const slots = [
+  {
+    image: gameCardImage,
+    title: "LIMBO",
+    multiplier: "500",
+    players: "2,110",
+  },
+  {
+    image: gameCardImage,
+    title: "LIMBO",
+    multiplier: "500",
+    players: "3,410",
+  },
+  {
+    image: gameCardImage,
+    title: "LIMBO",
+    multiplier: "500",
+    players: "1,110",
+  },
+  {
+    image: gameCardImage,
+    title: "LIMBO",
+    multiplier: "500",
+    players: "4,240",
+  },
+];
+const liveCasino = [
+  {
+    image: gameCardImage,
+    title: "LIMBO",
+    multiplier: "500",
+    players: "2,110",
+  },
+  {
+    image: gameCardImage,
+    title: "LIMBO",
+    multiplier: "500",
+    players: "3,410",
+  },
+  {
+    image: gameCardImage,
+    title: "LIMBO",
+    multiplier: "500",
+    players: "1,110",
+  },
+  {
+    image: gameCardImage,
+    title: "LIMBO",
+    multiplier: "500",
+    players: "4,240",
+  },
+];
+const gameShows = [
+  {
+    image: gameCardImage,
+    title: "LIMBO",
+    multiplier: "500",
+    players: "2,110",
+  },
+  {
+    image: gameCardImage,
+    title: "LIMBO",
+    multiplier: "500",
+    players: "3,410",
+  },
+  {
+    image: gameCardImage,
+    title: "LIMBO",
+    multiplier: "500",
+    players: "1,110",
+  },
+  {
+    image: gameCardImage,
+    title: "LIMBO",
+    multiplier: "500",
+    players: "4,240",
+  },
+];
+const bingo = [
+  {
+    image: gameCardImage,
+    title: "LIMBO",
+    multiplier: "500",
+    players: "2,110",
+  },
+  {
+    image: gameCardImage,
+    title: "LIMBO",
+    multiplier: "500",
+    players: "3,410",
+  },
+  {
+    image: gameCardImage,
+    title: "LIMBO",
+    multiplier: "500",
+    players: "1,110",
+  },
+  {
+    image: gameCardImage,
+    title: "LIMBO",
+    multiplier: "500",
+    players: "4,240",
+  },
+];
+const bonusBuy = [
+  {
+    image: gameCardImage,
+    title: "LIMBO",
+    multiplier: "500",
+    players: "2,110",
+  },
+  {
+    image: gameCardImage,
+    title: "LIMBO",
+    multiplier: "500",
+    players: "3,410",
+  },
+  {
+    image: gameCardImage,
+    title: "LIMBO",
+    multiplier: "500",
+    players: "1,110",
+  },
+  {
+    image: gameCardImage,
+    title: "LIMBO",
+    multiplier: "500",
+    players: "4,240",
+  },
+];
+const blackJack = [
+  {
+    image: gameCardImage,
+    title: "LIMBO",
+    multiplier: "500",
+    players: "2,110",
+  },
+  {
+    image: gameCardImage,
+    title: "LIMBO",
+    multiplier: "500",
+    players: "3,410",
+  },
+  {
+    image: gameCardImage,
+    title: "LIMBO",
+    multiplier: "500",
+    players: "1,110",
+  },
+  {
+    image: gameCardImage,
+    title: "LIMBO",
+    multiplier: "500",
+    players: "4,240",
+  },
+];
+const tableGames = [
+  {
+    image: gameCardImage,
+    title: "LIMBO",
+    multiplier: "500",
+    players: "2,110",
+  },
+  {
+    image: gameCardImage,
+    title: "LIMBO",
+    multiplier: "500",
+    players: "3,410",
+  },
+  {
+    image: gameCardImage,
+    title: "LIMBO",
+    multiplier: "500",
+    players: "1,110",
+  },
+  {
+    image: gameCardImage,
+    title: "LIMBO",
+    multiplier: "500",
+    players: "4,240",
+  },
+];
+const exclusive = [
+  {
+    image: gameCardImage,
+    title: "LIMBO",
+    multiplier: "500",
+    players: "2,110",
+  },
+  {
+    image: gameCardImage,
+    title: "LIMBO",
+    multiplier: "500",
+    players: "3,410",
+  },
+  {
+    image: gameCardImage,
+    title: "LIMBO",
+    multiplier: "500",
+    players: "1,110",
+  },
+  {
+    image: gameCardImage,
+    title: "LIMBO",
+    multiplier: "500",
+    players: "4,240",
+  },
+];
+const newRealeases = [
+  {
+    image: gameCardImage,
+    title: "LIMBO",
+    multiplier: "500",
+    players: "2,110",
+  },
+  {
+    image: gameCardImage,
+    title: "LIMBO",
+    multiplier: "500",
+    players: "3,410",
+  },
+  {
+    image: gameCardImage,
+    title: "LIMBO",
+    multiplier: "500",
+    players: "1,110",
+  },
+  {
+    image: gameCardImage,
+    title: "LIMBO",
+    multiplier: "500",
+    players: "4,240",
+  },
+];
+
 
 export default function CasinoPage() {
   const carouselRef = useRef<GameCarouselHandle | null>(null);
@@ -48,6 +283,88 @@ export default function CasinoPage() {
           games={games}
         />
       </div>
+        {/* slots carosel */}
+        <div className="mt-10">
+        <GameCarousel
+          ref={carouselRef}
+          title="Slots"
+          titleIcon={casinoIcon}
+          games={slots}
+        />
+      </div>
+        {/*  Live Casino carosel */}
+        <div className="mt-10">
+        <GameCarousel
+          ref={carouselRef}
+          title=" Live Casino"
+          titleIcon={casinoIcon}
+          games={liveCasino}
+        />
+      </div>
+        {/* game shows carosel */}
+        <div className="mt-10">
+        <GameCarousel
+          ref={carouselRef}
+          title="Game Shows"
+          titleIcon={casinoIcon}
+          games={gameShows}
+        />
+      </div>
+      {/*  Bingo carosel */}
+      <div className="mt-10">
+        <GameCarousel
+          ref={carouselRef}
+          title="Bingo"
+          titleIcon={casinoIcon}
+          games={bingo}
+        />
+      </div>
+          {/* bonud buy carosel */}
+          <div className="mt-10">
+        <GameCarousel
+          ref={carouselRef}
+          title="Bonus Buy"
+          titleIcon={casinoIcon}
+          games={bonusBuy}
+        />
+      </div>
+      {/* black jack carosel */}
+      <div className="mt-10">
+        <GameCarousel
+          ref={carouselRef}
+          title="Blackjack"
+          titleIcon={casinoIcon}
+          games={blackJack}
+        />
+      </div>
+      {/* table games carosel */}
+      <div className="mt-10">
+        <GameCarousel
+          ref={carouselRef}
+          title="Table Games"
+          titleIcon={casinoIcon}
+          games={tableGames}
+        />
+      </div>
+      {/* new exclusive carosel */}
+      <div className="mt-10">
+        <GameCarousel
+          ref={carouselRef}
+          title="Exclusive"
+          titleIcon={casinoIcon}
+          games={exclusive}
+        />
+      </div>
+      {/* new releases carosel */}
+      <div className="mt-10">
+        <GameCarousel
+          ref={carouselRef}
+          title="New Releases"
+          titleIcon={casinoIcon}
+          games={newRealeases}
+        />
+      </div>
+    
     </div>
   );
 }

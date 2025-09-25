@@ -220,7 +220,7 @@ export default function CasinoHome() {
       </div>
 
       {/* slots carosel */}
-      <div className="mt-10">
+      <div className="mt-5">
         <GameCarousel
           ref={carouselRef}
           title="Slots"
@@ -230,7 +230,7 @@ export default function CasinoHome() {
       </div>
 
       {/* game shows carosel */}
-      <div className="mt-10">
+      <div className="mt-5">
         <GameCarousel
           ref={carouselRef}
           title="Game Shows"
@@ -240,7 +240,7 @@ export default function CasinoHome() {
       </div>
 
       {/*  Live Casino carosel */}
-      <div className="mt-10">
+      <div className="mt-5">
         <GameCarousel
           ref={carouselRef}
           title=" Live Casino"
@@ -250,7 +250,7 @@ export default function CasinoHome() {
       </div>
 
       {/*  Bingo carosel */}
-      <div className="mt-10">
+      <div className="mt-5">
         <GameCarousel
           ref={carouselRef}
           title="Bingo"
@@ -260,7 +260,7 @@ export default function CasinoHome() {
       </div>
 
       {/*   Exclusive carosel */}
-      <div className="mt-10">
+      <div className="mt-5">
         <GameCarousel
           ref={carouselRef}
           title=" Exclusive"
@@ -270,7 +270,7 @@ export default function CasinoHome() {
       </div>
 
       {/*   New Releases carosel */}
-      <div className="mt-10">
+      <div className="mt-5">
         <GameCarousel
           ref={carouselRef}
           title="New Releases"

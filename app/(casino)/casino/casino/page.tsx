@@ -6,6 +6,8 @@ import gameCardImage from "@/public/images/common/game-card-img.png";
 import GameCarousel, {
   GameCarouselHandle,
 } from "../_components/re-usable/game-carosel";
+// import rom "..Banner f/_components/re-usable/banner";
+// import bannerImg from "@/public/images/common/banner-img.png";
 
 const games = [
   {
@@ -272,10 +274,15 @@ const newRealeases = [
 export default function CasinoPage() {
   const carouselRef = useRef<GameCarouselHandle | null>(null);
   return (
+    <div>
+      {/* <div>
+        <Banner />
+      </div> */}
+    
     <div className="text-white">
-      Casino
+      
       {/*   New Releases carosel */}
-      <div className="mt-10">
+      <div className="mt-5">
         <GameCarousel
           ref={carouselRef}
           title="Hot Games"
@@ -284,7 +291,7 @@ export default function CasinoPage() {
         />
       </div>
         {/* slots carosel */}
-        <div className="mt-10">
+        <div className="mt-5">
         <GameCarousel
           ref={carouselRef}
           title="Slots"
@@ -293,7 +300,7 @@ export default function CasinoPage() {
         />
       </div>
         {/*  Live Casino carosel */}
-        <div className="mt-10">
+        <div className="mt-5">
         <GameCarousel
           ref={carouselRef}
           title=" Live Casino"
@@ -302,7 +309,7 @@ export default function CasinoPage() {
         />
       </div>
         {/* game shows carosel */}
-        <div className="mt-10">
+        <div className="mt-5">
         <GameCarousel
           ref={carouselRef}
           title="Game Shows"
@@ -311,7 +318,7 @@ export default function CasinoPage() {
         />
       </div>
       {/*  Bingo carosel */}
-      <div className="mt-10">
+      <div className="mt-5">
         <GameCarousel
           ref={carouselRef}
           title="Bingo"
@@ -320,7 +327,7 @@ export default function CasinoPage() {
         />
       </div>
           {/* bonud buy carosel */}
-          <div className="mt-10">
+          <div className="mt-5">
         <GameCarousel
           ref={carouselRef}
           title="Bonus Buy"
@@ -329,7 +336,7 @@ export default function CasinoPage() {
         />
       </div>
       {/* black jack carosel */}
-      <div className="mt-10">
+      <div className="mt-5">
         <GameCarousel
           ref={carouselRef}
           title="Blackjack"
@@ -338,7 +345,7 @@ export default function CasinoPage() {
         />
       </div>
       {/* table games carosel */}
-      <div className="mt-10">
+      <div className="mt-5">
         <GameCarousel
           ref={carouselRef}
           title="Table Games"
@@ -347,7 +354,7 @@ export default function CasinoPage() {
         />
       </div>
       {/* new exclusive carosel */}
-      <div className="mt-10">
+      <div className="mt-5">
         <GameCarousel
           ref={carouselRef}
           title="Exclusive"
@@ -356,7 +363,7 @@ export default function CasinoPage() {
         />
       </div>
       {/* new releases carosel */}
-      <div className="mt-10">
+      <div className="mt-5">
         <GameCarousel
           ref={carouselRef}
           title="New Releases"
@@ -365,6 +372,7 @@ export default function CasinoPage() {
         />
       </div>
     
+    </div>
     </div>
   );
 }

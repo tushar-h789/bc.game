@@ -4,7 +4,7 @@ import FooterTab from "./_components/re-usable/footer-tab";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="pb-20">
+    <div className="pb-20 overflow-hidden">
       <Navbar />
       <main>{children}</main>
       <FooterTab />

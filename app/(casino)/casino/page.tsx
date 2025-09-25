@@ -265,7 +265,7 @@ export default function CasinoHome() {
           ref={carouselRef}
           title=" Exclusive"
           titleIcon={casinoIcon}
-          games={exclusive }
+          games={exclusive}
         />
       </div>
 
@@ -275,7 +275,7 @@ export default function CasinoHome() {
           ref={carouselRef}
           title="New Releases"
           titleIcon={casinoIcon}
-          games={exclusive }
+          games={exclusive}
         />
       </div>
     </div>

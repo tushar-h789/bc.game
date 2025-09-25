@@ -1,5 +1,4 @@
 import React from "react";
-import CasinoSearch from "./_components/casino-search";
 import ProvidersSearch from "./_components/providers-search";
 import GameCard from "../_components/re-usable/game-card";
 import gameCardImage from "@/public/images/common/game-card-img.png";
@@ -34,6 +33,7 @@ const games = [
 
 export default function ExplorePage() {
   return (
+    <div>
     <div className="p-2 text-white">
       <div className="carousel-container">
           <div className="carousel relative">
@@ -87,6 +87,7 @@ export default function ExplorePage() {
             </div>
           </div>
         </div>
+    </div>
     </div>
   );
 }

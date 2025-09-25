@@ -1,9 +1,8 @@
 import React from 'react'
 
-export default function CasinoSearch() {
+export default function searchCasino() {
   return (
     <div>
-
 
     </div>
   )

@@ -6,7 +6,7 @@ import nix from "@/public/images/home/nix.png";
 
 export default function DiscoVirtual() {
   return (
-    <Card className=" text-white rounded-2xl shadow-lg">
+    <Card className=" container bg-transparent text-white rounded-2xl shadow-lg">
       <CardContent className="flex flex-col gap-6">
         {/* Top Logos */}
         <div className="flex justify-between items-center">

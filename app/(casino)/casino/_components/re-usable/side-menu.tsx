@@ -17,6 +17,9 @@ import gameShowsIcon from "@/public/images/menu-item/game-shows.png";
 import bingoIcon from "@/public/images/menu-item/bingo.png";
 import themesIcon from "@/public/images/menu-item/themes.png";
 import provideIcon from "@/public/images/menu-item/provide.png";
+import supportIcon from "@/public/images/menu-item/support.png";
+import androidIcon from "@/public/images/menu-item/android.png"
+import iosIcon from "@/public/images/menu-item/ios.png"
 
 type MenuSection = {
   id: string;
@@ -82,10 +85,13 @@ const SECTIONS: MenuSection[] = [
       { id: "Responsible-Gambling", image: hotGamesIcon, label: "Game Lobby" },
       { id: "Rellbet Smart", image: newReleasesIcon, label: "Favorites" },
       { id: "Recognise the Signs", image: slotsIcon, label: "RB Originals" },
-      { id: "Responsible Gambling FAQ's", image: bonusBuyIcon, label: "RB Exclusive" },
+      {
+        id: "Responsible Gambling FAQ's",
+        image: bonusBuyIcon,
+        label: "RB Exclusive",
+      },
       { id: "Self-Assessment", image: liveCasinoIcon, label: "Slots" },
       { id: "Budget Calculator", image: tableGamesIcon, label: "Game Shows" },
-      
     ],
   },
   {
@@ -98,7 +104,6 @@ const SECTIONS: MenuSection[] = [
       { id: "AML Policy", image: slotsIcon, label: "RB Originals" },
       { id: "License", image: bonusBuyIcon, label: "RB Exclusive" },
       { id: "Terms and Conditions", image: liveCasinoIcon, label: "Slots" },
-      
     ],
   },
   {
@@ -155,85 +160,142 @@ export default function SideMenu({ open, onClose }: SideMenuProps) {
   }
 
   return (
-    <div
-      aria-hidden={!open}
-      className={"fixed inset-0 z-50 pointer-events-auto"}
-    >
-      {/* Backdrop */}
+    <div>
       <div
-        className={`absolute inset-0 bg-black transition-opacity duration-200 ${
-          open ? "opacity-50" : "opacity-0"
-        }`}
-        onClick={onClose}
-      />
-
-      {/* Panel */}
-      <aside
-        className={`absolute right-0 top-0 h-full w-[86%] max-w-[380px] bg-[#1e2f3a] text-white shadow-xl transform transition-transform duration-300 ease-out ${
-          open ? "translate-x-0" : "translate-x-full"
-        }`}
-        role="dialog"
-        aria-modal="true"
+        aria-hidden={!open}
+        className={"fixed inset-0 z-50 pointer-events-auto"}
       >
-        <div className="h-full overflow-y-auto">
-          {SECTIONS.map((section) => {
-            const isOpen = expanded[section.id];
-            return (
-              <div key={section.id} className="">
-                <button
-                  type="button"
-                  className="w-full flex items-center justify-between mb-2 px-4 py-3 bg-[#213744]"
-                  onClick={() => toggle(section.id)}
-                  aria-expanded={!!isOpen}
-                >
-                  <div className="flex items-center gap-2">
-                    <Image
-                      className="w-6 h-6"
-                      src={section.image}
-                      alt={section.title}
-                      width={20}
-                      height={20}
-                    />
-                    <span className="font-medium">{section.title}</span>
-                  </div>
-                  <div>
-                    <FaChevronRight
-                      className={`transition-transform ${
-                        isOpen ? "rotate-90" : "rotate-0"
-                      }`}
-                    />
-                  </div>
-                </button>
-                {isOpen && (
-                  <div className="pb-2">
-                    {section.items.map((item) => (
-                      <button
-                        key={item.id}
-                        type="button"
-                        className="w-full flex items-center justify-between px-6 py-2 text-sm text-gray-200 hover:bg-[#2a3f4a]"
-                      >
-                        <div className="flex items-center gap-2">
-                          <Image
-                            className="w-6 h-6"
-                            src={item.image}
-                            alt={item.label}
-                            width={20}
-                            height={20}
-                          />
-                          <span>{item.label}</span>
-                        </div>
-                        <div>
-                          <FaChevronRight className="opacity-60" />
-                        </div>
-                      </button>
-                    ))}
-                  </div>
-                )}
+        {/* Backdrop */}
+        <div
+          className={`absolute inset-0 bg-black transition-opacity duration-200 ${
+            open ? "opacity-50" : "opacity-0"
+          }`}
+          onClick={onClose}
+        />
+
+        {/* Panel */}
+        <aside
+          className={`absolute right-0 top-0 h-full w-[86%] max-w-[380px] bg-[#1e2f3a] text-white shadow-xl transform transition-transform duration-300 ease-out ${
+            open ? "translate-x-0" : "translate-x-full"
+          }`}
+          role="dialog"
+          aria-modal="true"
+        >
+          <div className="h-full overflow-y-auto">
+            {SECTIONS.map((section) => {
+              const isOpen = expanded[section.id];
+              return (
+                <div key={section.id} className="">
+                  <button
+                    type="button"
+                    className="w-full flex items-center justify-between mb-2 px-4 py-3 bg-[#213744]"
+                    onClick={() => toggle(section.id)}
+                    aria-expanded={!!isOpen}
+                  >
+                    <div className="flex items-center gap-2">
+                      <Image
+                        className="w-6 h-6"
+                        src={section.image}
+                        alt={section.title}
+                        width={20}
+                        height={20}
+                      />
+                      <span className="font-medium">{section.title}</span>
+                    </div>
+                    <div>
+                      <FaChevronRight
+                        className={`transition-transform ${
+                          isOpen ? "rotate-90" : "rotate-0"
+                        }`}
+                      />
+                    </div>
+                  </button>
+                  {isOpen && (
+                    <div className="pb-2">
+                      {section.items.map((item) => (
+                        <button
+                          key={item.id}
+                          type="button"
+                          className="w-full flex items-center justify-between px-6 py-2 text-sm text-gray-200 hover:bg-[#2a3f4a]"
+                        >
+                          <div className="flex items-center gap-2">
+                            <Image
+                              className="w-6 h-6"
+                              src={item.image}
+                              alt={item.label}
+                              width={20}
+                              height={20}
+                            />
+                            <span>{item.label}</span>
+                          </div>
+                          <div>
+                            <FaChevronRight className="opacity-60" />
+                          </div>
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+
+          <div className="flex gap-12 text-white bg-[#213744] px-4 py-6 mx-4 items-center">
+            <div>
+              <Image
+                src={supportIcon}
+                alt="support icon"
+                className="w-6 h-6"
+                width={20}
+                height={20}
+              />
+              <p  className="text-[#CBCAD0] my-1 font-semibold ">24/7 Premium Support</p>
+              <p className="text-[#CBCAD0] text-[12px]">Contact us if you have still question</p>
+            </div>
+            <div>
+              <h3 className="bg-[#0077FF] text-[#CBCAD0] font-bold p-2 rounded-lg">GO</h3>
+            </div>
+          </div>
+
+          <div>
+            <div className="flex justify-between bg-[#213744]  items-center px-4 py-6 mx-4 my-4 rounded-lg border border-[#0077FF]">
+              <div className="flex gap-4 items-center">
+                <Image
+                 src={androidIcon}
+                 alt="support icon"
+                 className="w-6 h-6"
+                 width={20}
+                 height={20} />
+                 <div>
+                  <p className="text-[#CBCAD0] my-1 ">Application</p>
+                  <h3 className="text-[#CBCAD0] my-1 font-bold text-[18px] ">For Android</h3>
+                 </div>
               </div>
-            );
-          })}
-        </div>
-      </aside>
+              <div>
+               <h3 className="bg-[#0077FF] text-[#CBCAD0] font-bold py-2 px-4 rounded-lg">?</h3>
+              </div>
+            </div>
+            <div className="flex justify-between bg-[#213744]  items-center px-4 py-6 mx-4 my-4 rounded-lg border border-[#0077FF]">
+              <div className="flex gap-4 items-center">
+                <Image
+                 src={androidIcon}
+                 alt="support icon"
+                 className="w-6 h-6"
+                 width={20}
+                 height={20} />
+                 <div>
+                  <p className="text-[#CBCAD0] my-1 ">Application</p>
+                  <h3 className="text-[#CBCAD0] my-1 font-bold text-[18px] ">For Android</h3>
+                 </div>
+              </div>
+              <div>
+               <h3 className="bg-[#0077FF] text-[#CBCAD0] font-bold py-2 px-4 rounded-lg">?</h3>
+              </div>
+            </div>
+          </div>
+          </div>
+      
+        </aside>
+      </div>
     </div>
   );
 }

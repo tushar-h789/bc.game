@@ -276,14 +276,15 @@ export default function CasinoPage() {
   return (
     <div>
       <div className="text-white">
-      <div className="py-4 flex items-center justify-center">
-        <Banner
-          title="Stay Untamed"
-          description="Registration Now & Unlock Up To $10,000 in Casino or Sports!"
-          buttonText="Join Now"
-          imageSrc={bannerImg}
-        />
-      </div>
+        <div className="py-4 flex items-center justify-center">
+          <Banner
+            title="Stay Untamed"
+            subTitle="Registration Now & Unlock"
+            description=" Up To $10,000 in Casino or Sports!"
+            buttonText="Join Now"
+            imageSrc={bannerImg}
+          />
+        </div>
 
         <div className=" p-4">
           <div className="relative w-full max-w-sm">

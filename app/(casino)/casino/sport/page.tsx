@@ -4,6 +4,7 @@ import teamBFlag from "@/public/images/home/bangladesh.png";
 import tournamentLogo from "@/public/images/home/asio-cup-logo.png";
 import ReUsableSportsSlider, { type MatchSlideData } from "../_components/re-usable/re-usable-sports-slider";
 import Banner from "../_components/re-usable/banner";
+import PreMatch from "./_components/pre-match"
 
 const matches: MatchSlideData[] = [
   {
@@ -73,6 +74,11 @@ export default function Page() {
         title="Upcoming Matches" 
         slides={matches} 
       />
+    </div>
+    <div>
+    <PreMatch
+      title="Upcoming Matches" 
+      slides={matches}  />
     </div>
    </div>
   );

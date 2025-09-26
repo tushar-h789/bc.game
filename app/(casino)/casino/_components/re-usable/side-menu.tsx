@@ -18,8 +18,8 @@ import bingoIcon from "@/public/images/menu-item/bingo.png";
 import themesIcon from "@/public/images/menu-item/themes.png";
 import provideIcon from "@/public/images/menu-item/provide.png";
 import supportIcon from "@/public/images/menu-item/support.png";
-import androidIcon from "@/public/images/menu-item/android.png"
-import iosIcon from "@/public/images/menu-item/ios.png"
+import androidIcon from "@/public/images/menu-item/android.png";
+import iosIcon from "@/public/images/menu-item/ios.png";
 
 type MenuSection = {
   id: string;
@@ -175,7 +175,7 @@ export default function SideMenu({ open, onClose }: SideMenuProps) {
 
         {/* Panel */}
         <aside
-          className={`absolute right-0 top-0 h-full w-[86%] max-w-[380px] bg-[#1e2f3a] text-white shadow-xl transform transition-transform duration-300 ease-out ${
+          className={`absolute right-0 top-0 h-full w-[86%] max-w-[380px] bg-[#1e2f3a] text-white shadow-xl transform transition-transform duration-300 ease-out px-2 ${
             open ? "translate-x-0" : "translate-x-full"
           }`}
           role="dialog"
@@ -188,7 +188,7 @@ export default function SideMenu({ open, onClose }: SideMenuProps) {
                 <div key={section.id} className="">
                   <button
                     type="button"
-                    className="w-full flex items-center justify-between mb-2 px-4 py-3 bg-[#213744]"
+                    className="w-full flex items-center justify-between mb-2 px-4 py-3 bg-[#213744]  rounded"
                     onClick={() => toggle(section.id)}
                     aria-expanded={!!isOpen}
                   >
@@ -239,61 +239,77 @@ export default function SideMenu({ open, onClose }: SideMenuProps) {
               );
             })}
 
-          <div className="flex gap-12 text-white bg-[#213744] px-4 py-6 mx-4 items-center">
-            <div>
-              <Image
-                src={supportIcon}
-                alt="support icon"
-                className="w-6 h-6"
-                width={20}
-                height={20}
-              />
-              <p  className="text-[#CBCAD0] my-1 font-semibold ">24/7 Premium Support</p>
-              <p className="text-[#CBCAD0] text-[12px]">Contact us if you have still question</p>
+            <div className="flex gap-12 text-white bg-[#213744] px-4 py-4 items-center  rounded">
+              <div>
+                <Image
+                  src={supportIcon}
+                  alt="support icon"
+                  className="w-6 h-6"
+                  width={20}
+                  height={20}
+                />
+                <p className="text-[#CBCAD0] my-1 font-semibold ">
+                  24/7 Premium Support
+                </p>
+                <p className="text-[#CBCAD0] text-[12px]">
+                  Contact us if you have still question
+                </p>
+              </div>
+              <div>
+                <h3 className="bg-[#0077FF] text-white  p-2 px-4 rounded-lg">
+                  GO
+                </h3>
+              </div>
             </div>
-            <div>
-              <h3 className="bg-[#0077FF] text-[#CBCAD0] font-bold p-2 rounded-lg">GO</h3>
-            </div>
-          </div>
 
-          <div>
-            <div className="flex justify-between bg-[#213744]  items-center px-4 py-6 mx-4 my-4 rounded-lg border border-[#0077FF]">
-              <div className="flex gap-4 items-center">
-                <Image
-                 src={androidIcon}
-                 alt="support icon"
-                 className="w-6 h-6"
-                 width={20}
-                 height={20} />
-                 <div>
-                  <p className="text-[#CBCAD0] my-1 ">Application</p>
-                  <h3 className="text-[#CBCAD0] my-1 font-bold text-[18px] ">For Android</h3>
-                 </div>
+            <div className="w-full flex items-center justify-between gap-2 ">
+              {/* card 1 */}
+              <div className="w-1/2 flex justify-between bg-[#213744]  items-center  my-4 rounded-lg border border-[#0077FF] px-2">
+                <div className="flex gap-2 items-center">
+                  <Image
+                    src={androidIcon}
+                    alt="support icon"
+                    width={30}
+                    height={30}
+                  />
+                  <div>
+                    <p className="text-gray-400 text-xs my-1 ">Application</p>
+                    <h3 className="text-[#CBCAD0] my-1 text-sm font-semibold text-nowrap ">
+                      For Android
+                    </h3>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="bg-[#0077FF] text-[#CBCAD0] font-semibold px-2 rounded-full">
+                    ?
+                  </h3>
+                </div>
               </div>
-              <div>
-               <h3 className="bg-[#0077FF] text-[#CBCAD0] font-bold py-2 px-4 rounded-lg">?</h3>
-              </div>
-            </div>
-            <div className="flex justify-between bg-[#213744]  items-center px-4 py-6 mx-4 my-4 rounded-lg border border-[#0077FF]">
-              <div className="flex gap-4 items-center">
-                <Image
-                 src={androidIcon}
-                 alt="support icon"
-                 className="w-6 h-6"
-                 width={20}
-                 height={20} />
-                 <div>
-                  <p className="text-[#CBCAD0] my-1 ">Application</p>
-                  <h3 className="text-[#CBCAD0] my-1 font-bold text-[18px] ">For Android</h3>
-                 </div>
-              </div>
-              <div>
-               <h3 className="bg-[#0077FF] text-[#CBCAD0] font-bold py-2 px-4 rounded-lg">?</h3>
+
+              {/* card 2 */}
+              <div className="w-1/2 flex justify-between bg-[#213744]  items-center  my-4 rounded-lg border border-[#0077FF] px-2">
+                <div className="flex gap-2 items-center">
+                  <Image
+                    src={iosIcon}
+                    alt="support icon"
+                    width={30}
+                    height={30}
+                  />
+                  <div>
+                    <p className="text-gray-400 text-xs my-1 ">Application</p>
+                    <h3 className="text-[#CBCAD0] my-1 text-sm font-semibold text-nowrap ">
+                      For iOS
+                    </h3>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="bg-[#0077FF] text-[#CBCAD0] font-semibold px-2 rounded-full">
+                    ?
+                  </h3>
+                </div>
               </div>
             </div>
           </div>
-          </div>
-      
         </aside>
       </div>
     </div>

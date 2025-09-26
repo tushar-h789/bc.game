@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useCallback, useMemo, useRef, useState } from "react";
 import casinoIcon from "@/public/images/common/icon.png";
 import gameCardImage from "@/public/images/common/game-card-img.png";
 // import searchCasino from "./_components/search-casino";
@@ -9,6 +9,7 @@ import GameCarousel, {
 } from "../_components/re-usable/game-carosel";
 import Banner from "../_components/re-usable/banner";
 import bannerImg from "@/public/images/common/banner-img.png";
+import CasinoTab, { type CasinoTabKey } from "./_components/casino-tab";
 
 const games = [
   {
@@ -273,6 +274,38 @@ const newRealeases = [
 
 export default function CasinoPage() {
   const carouselRef = useRef<GameCarouselHandle | null>(null);
+  const [activeTab, setActiveTab] = useState<CasinoTabKey>("lobby");
+  const [query, setQuery] = useState("");
+
+  const filterByQuery = useCallback(
+    (items: typeof games) => {
+      if (!query.trim()) return items;
+      const q = query.trim().toLowerCase();
+      return items.filter((g) => g.title.toLowerCase().includes(q));
+    },
+    [query]
+  );
+
+  const filtered = useMemo(
+    () => ({
+      games: filterByQuery(games),
+      slots: filterByQuery(slots),
+      liveCasino: filterByQuery(liveCasino),
+      gameShows: filterByQuery(gameShows),
+      bingo: filterByQuery(bingo),
+      bonusBuy: filterByQuery(bonusBuy),
+      blackJack: filterByQuery(blackJack),
+      tableGames: filterByQuery(tableGames),
+      exclusive: filterByQuery(exclusive),
+      newRealeases: filterByQuery(newRealeases),
+    }),
+    [filterByQuery]
+  );
+
+  const showLobby = activeTab === "lobby";
+  const showHot = activeTab === "hot" || showLobby;
+  const showNew = activeTab === "new" || showLobby;
+
   return (
     <div>
       <div className="text-white">
@@ -286,123 +319,149 @@ export default function CasinoPage() {
           />
         </div>
 
-        <div className=" p-4">
-          <div className="relative w-full max-w-sm">
-            <span className="absolute inset-y-0 left-3 flex items-center text-gray-400">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                className="w-5 h-5"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1110.5 3a7.5 7.5 0 016.15 13.65z"
-                />
-              </svg>
-            </span>
+        {/* Casino tab */}
+        <div className="container">
+          {/* search field */}
+          <div className="p-4">
+            <div className="relative w-full ">
+              <span className="absolute inset-y-0 left-3 flex items-center text-gray-400">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  className="w-5 h-5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1110.5 3a7.5 7.5 0 016.15 13.65z"
+                  />
+                </svg>
+              </span>
 
-            <input
-              type="text"
-              placeholder="Search Games"
-              className="w-full rounded-md bg-[#213744] pl-10 pr-4 py-2 text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              <input
+                type="text"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="Search Games"
+                className="w-full rounded-md bg-[#213744] pl-10 pr-4 py-2 text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+          </div>
+          <CasinoTab activeTab={activeTab} onChange={setActiveTab} />
+          {showHot ? (
+            <div className=" mt-5">
+              <GameCarousel
+                ref={carouselRef}
+                title="Hot Games"
+                titleIcon={casinoIcon}
+                games={filtered.games}
+              />
+            </div>
+          ) : null}
+        </div>
+
+        {/* slots carosel */}
+        {showLobby ? (
+          <div className="mt-5">
+            <GameCarousel
+              ref={carouselRef}
+              title="Slots"
+              titleIcon={casinoIcon}
+              games={filtered.slots}
             />
           </div>
-        </div>
-
-        {/*   New Releases carosel */}
-        <div className="mt-5">
-          <GameCarousel
-            ref={carouselRef}
-            title="Hot Games"
-            titleIcon={casinoIcon}
-            games={games}
-          />
-        </div>
-        {/* slots carosel */}
-        <div className="mt-5">
-          <GameCarousel
-            ref={carouselRef}
-            title="Slots"
-            titleIcon={casinoIcon}
-            games={slots}
-          />
-        </div>
+        ) : null}
         {/*  Live Casino carosel */}
-        <div className="mt-5">
-          <GameCarousel
-            ref={carouselRef}
-            title=" Live Casino"
-            titleIcon={casinoIcon}
-            games={liveCasino}
-          />
-        </div>
+        {showLobby ? (
+          <div className="mt-5">
+            <GameCarousel
+              ref={carouselRef}
+              title=" Live Casino"
+              titleIcon={casinoIcon}
+              games={filtered.liveCasino}
+            />
+          </div>
+        ) : null}
         {/* game shows carosel */}
-        <div className="mt-5">
-          <GameCarousel
-            ref={carouselRef}
-            title="Game Shows"
-            titleIcon={casinoIcon}
-            games={gameShows}
-          />
-        </div>
+        {showLobby ? (
+          <div className="mt-5">
+            <GameCarousel
+              ref={carouselRef}
+              title="Game Shows"
+              titleIcon={casinoIcon}
+              games={filtered.gameShows}
+            />
+          </div>
+        ) : null}
         {/*  Bingo carosel */}
-        <div className="mt-5">
-          <GameCarousel
-            ref={carouselRef}
-            title="Bingo"
-            titleIcon={casinoIcon}
-            games={bingo}
-          />
-        </div>
+        {showLobby ? (
+          <div className="mt-5">
+            <GameCarousel
+              ref={carouselRef}
+              title="Bingo"
+              titleIcon={casinoIcon}
+              games={filtered.bingo}
+            />
+          </div>
+        ) : null}
         {/* bonud buy carosel */}
-        <div className="mt-5">
-          <GameCarousel
-            ref={carouselRef}
-            title="Bonus Buy"
-            titleIcon={casinoIcon}
-            games={bonusBuy}
-          />
-        </div>
+        {showLobby ? (
+          <div className="mt-5">
+            <GameCarousel
+              ref={carouselRef}
+              title="Bonus Buy"
+              titleIcon={casinoIcon}
+              games={filtered.bonusBuy}
+            />
+          </div>
+        ) : null}
         {/* black jack carosel */}
-        <div className="mt-5">
-          <GameCarousel
-            ref={carouselRef}
-            title="Blackjack"
-            titleIcon={casinoIcon}
-            games={blackJack}
-          />
-        </div>
+        {showLobby ? (
+          <div className="mt-5">
+            <GameCarousel
+              ref={carouselRef}
+              title="Blackjack"
+              titleIcon={casinoIcon}
+              games={filtered.blackJack}
+            />
+          </div>
+        ) : null}
         {/* table games carosel */}
-        <div className="mt-5">
-          <GameCarousel
-            ref={carouselRef}
-            title="Table Games"
-            titleIcon={casinoIcon}
-            games={tableGames}
-          />
-        </div>
+        {showLobby ? (
+          <div className="mt-5">
+            <GameCarousel
+              ref={carouselRef}
+              title="Table Games"
+              titleIcon={casinoIcon}
+              games={filtered.tableGames}
+            />
+          </div>
+        ) : null}
         {/* new exclusive carosel */}
-        <div className="mt-5">
-          <GameCarousel
-            ref={carouselRef}
-            title="Exclusive"
-            titleIcon={casinoIcon}
-            games={exclusive}
-          />
-        </div>
+        {showLobby ? (
+          <div className="mt-5">
+            <GameCarousel
+              ref={carouselRef}
+              title="Exclusive"
+              titleIcon={casinoIcon}
+              games={filtered.exclusive}
+            />
+          </div>
+        ) : null}
         {/* new releases carosel */}
-        <div className="mt-5">
-          <GameCarousel
-            ref={carouselRef}
-            title="New Releases"
-            titleIcon={casinoIcon}
-            games={newRealeases}
-          />
-        </div>
+        {showNew ? (
+          <div className="mt-5">
+            <GameCarousel
+              ref={carouselRef}
+              title="New Releases"
+              titleIcon={casinoIcon}
+              games={filtered.newRealeases}
+            />
+          </div>
+        ) : null}
       </div>
     </div>
   );

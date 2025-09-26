@@ -8,6 +8,7 @@ import GameCarousel, {
 import gameCardImage from "@/public/images/common/game-card-img.png";
 import BigWin from "./_components/home/bigwin";
 import casinoIcon from "@/public/images/common/icon.png";
+import LiveSports from "./_components/home/live-sports";
 
 const games = [
   {
@@ -229,6 +230,10 @@ export default function CasinoHome() {
         />
       </div>
 
+      <div className="mt-10">
+        <LiveSports />
+      </div>
+
       {/* game shows carosel */}
       <div className="mt-5">
         <GameCarousel
@@ -265,7 +270,7 @@ export default function CasinoHome() {
           ref={carouselRef}
           title=" Exclusive"
           titleIcon={casinoIcon}
-          games={exclusive }
+          games={exclusive}
         />
       </div>
 
@@ -275,7 +280,7 @@ export default function CasinoHome() {
           ref={carouselRef}
           title="New Releases"
           titleIcon={casinoIcon}
-          games={exclusive }
+          games={exclusive}
         />
       </div>
     </div>

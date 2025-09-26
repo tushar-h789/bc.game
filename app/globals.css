@@ -116,3 +116,16 @@
 .carousel-button:hover {
   background-color: rgba(0, 0, 0, 0.7);
 }
+
+/* Sports slider - full card per slide */
+/* .sports-embla {
+  overflow: hidden;
+  width: 100%;
+} */
+.sports-embla__container {
+  display: flex;
+  gap: 0;
+}
+.sports-embla__slide {
+  flex: 0 0 100%;
+}

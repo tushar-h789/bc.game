@@ -41,7 +41,7 @@ export default function DiscoVirtual() {
             </p>
           </div>
 
-          <div className="w-1/2 flex items-center justify-center gap-2 bg-[#233540] rounded-md text-xs">
+          <div className="w-1/2 flex items-center justify-center py-1 gap-2 bg-[#233540] rounded-md text-xs">
             <div className="w-4 h-4 flex items-center justify-center bg-green-500 rounded-full">
               <span className="text-gray-900 font-semibold">$</span>
             </div>

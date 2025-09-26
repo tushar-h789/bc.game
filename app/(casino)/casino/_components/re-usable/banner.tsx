@@ -17,7 +17,7 @@ export default function Banner({
   imageSrc,
 }: BannerProps) {
   return (
-    <div className="container bg-[#213744] p-4 rounded-lg flex items-center justify-between gap-2 mx-1">
+    <div className="container bg-[#213744] p-4 rounded-lg flex items-center justify-between gap-2">
       {/* Left Side Content */}
       <div className="text-white flex flex-col">
         <h2 className="text-[#E2E5E7] bg-[#2F4553] p-2 rounded-[4px] max-w-[120px] font-semibold">

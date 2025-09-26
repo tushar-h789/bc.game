@@ -12,9 +12,9 @@ export default function BigWin() {
   ];
 
   return (
-    <section className="container p-6 rounded-xl text-white w-full  mx-auto">
+    <section className="container px-2 py-6 rounded-xl text-white w-full  mx-auto">
       {/* Header */}
-      <header className="flex items-center mb-6">
+      <header className="flex items-center mb-2">
         <span className="h-3 w-3 bg-sky-500 rounded-full mr-3"></span>
         <h2 className="text-xl font-bold">Recent Big Wins</h2>
       </header>

@@ -55,7 +55,7 @@ const GameCarousel = forwardRef<GameCarouselHandle, GameCarouselProps>(
     );
 
     return (
-      <div className="container ">
+      <div className="container">
         <div className="flex items-center justify-between mb-5 mx-2">
           <div className="flex items-center gap-2">
             {titleIcon ? (
@@ -89,7 +89,7 @@ const GameCarousel = forwardRef<GameCarouselHandle, GameCarouselProps>(
         <div className="carousel-container">
           <div className="carousel relative">
             <div className="embla" ref={emblaRef}>
-              <div className="embla__container ">
+              <div className="embla__container">
                 {games.map((game, index) => (
                   <div className="embla__slide" key={index}>
                     <GameCard gameData={game} />

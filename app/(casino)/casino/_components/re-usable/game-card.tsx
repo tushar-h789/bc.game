@@ -21,7 +21,7 @@ const GameCard = ({ gameData }: GameCardProps) => {
           src={gameData.image}
           alt="game"
           fill
-          sizes="(max-width: 768px) "
+          // sizes="(max-width: 768px)"
           className="object-cover w-full"
         />
       </div>

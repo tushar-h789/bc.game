@@ -201,7 +201,7 @@ export default function CasinoHome() {
   const carouselRef = useRef<GameCarouselHandle | null>(null);
   return (
     <div>
-      <div className="py-4 flex items-center justify-center">
+      <div className="flex items-center justify-center mx-2">
         <Banner
           title="Stay Untamed"
           subTitle="Registration Now & Unlock"

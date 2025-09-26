@@ -309,7 +309,7 @@ export default function CasinoPage() {
   return (
     <div>
       <div className="text-white">
-        <div className="py-4 flex items-center justify-center">
+        <div className="flex items-center justify-center mx-2">
           <Banner
             title="Stay Untamed"
             subTitle="Registration Now & Unlock"
@@ -322,7 +322,7 @@ export default function CasinoPage() {
         {/* Casino tab */}
         <div className="container">
           {/* search field */}
-          <div className="p-4">
+          <div className="py-4 px-2">
             <div className="relative w-full ">
               <span className="absolute inset-y-0 left-3 flex items-center text-gray-400">
                 <svg
@@ -352,7 +352,7 @@ export default function CasinoPage() {
           </div>
           <CasinoTab activeTab={activeTab} onChange={setActiveTab} />
           {showHot ? (
-            <div className=" mt-5">
+            <div className=" mt-5 px-10">
               <GameCarousel
                 ref={carouselRef}
                 title="Hot Games"

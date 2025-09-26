@@ -19,7 +19,7 @@ export type { CasinoTabKey };
 
 export default function CasinoTab({ activeTab, onChange }: CasinoTabProps) {
   return (
-    <div className="container px-4">
+    <div className="container px-2">
       <div className="flex items-center gap-2 overflow-x-auto no-scrollbar">
         {tabs.map(({ key, label }) => {
           const isActive = activeTab === key;

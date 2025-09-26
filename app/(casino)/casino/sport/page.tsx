@@ -77,7 +77,7 @@ export default function Page() {
     </div>
     <div>
     <PreMatch
-      title="Upcoming Matches" 
+      title="Top pre-match" 
       slides={matches}  />
     </div>
    </div>

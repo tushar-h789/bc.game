@@ -67,7 +67,7 @@ function TeamRow({ flag, name, side }: { flag: StaticImageData; name: string; si
 
 function SportsCard({ data }: { data: MatchSlideData }) {
   return (
-    <div className="container bg-[#1A2C38] text-slate-100 rounded-xl p-3 shadow-md ring-1 ring-white/5 h-full">
+    <div className="container bg-[#1A2C38] text-slate-100 rounded-xl p-3 my-2 shadow-md ring-1 ring-white/5 h-full">
       <div className="flex items-start justify-between gap-2">
         <div className="flex items-center gap-3 min-w-0">
           <Image src={data.tournamentLogo} alt="tournament logo" />
@@ -139,8 +139,8 @@ export default function ReUsableSportsSlider({
 
   return (
     <div className="container">
-      <div className="flex items-center justify-between mb-5 mx-2">
-        <div className="flex items-center gap-2">
+      <div className="flex items-center justify-between mb-5 mt-4 mx-2">
+        <div className="flex items-center gap-2 ">
           {titleIcon ? (
             <Image src={titleIcon} alt="section icon" width={24} height={24} />
           ) : null}

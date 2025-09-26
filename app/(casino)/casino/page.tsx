@@ -11,6 +11,7 @@ import casinoIcon from "@/public/images/common/icon.png";
 import LiveSports from "./_components/home/live-sports";
 import DepositBonus from "./_components/home/deposit-bonus";
 import JoinOurCommunity from "./_components/home/join-our-community";
+import DiscoVirtual from "./_components/home/disco-virtual";
 
 const games = [
   {
@@ -292,6 +293,10 @@ export default function CasinoHome() {
 
       <div className="mt-10">
         <JoinOurCommunity />
+      </div>
+
+      <div className="mt-10">
+        <DiscoVirtual />
       </div>
     </div>
   );

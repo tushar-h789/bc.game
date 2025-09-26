@@ -204,7 +204,8 @@ export default function CasinoHome() {
       <div className="py-4 flex items-center justify-center">
         <Banner
           title="Stay Untamed"
-          description="Registration Now & Unlock Up To $10,000 in Casino or Sports!"
+          subTitle="Registration Now & Unlock"
+          description=" Up To $10,000 in Casino or Sports!"
           buttonText="Join Now"
           imageSrc={bannerImg}
         />

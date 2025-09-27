@@ -3,6 +3,7 @@
 import React, { useCallback, useMemo, useRef, useState } from "react";
 import casinoIcon from "@/public/images/common/icon.png";
 import gameCardImage from "@/public/images/common/game-card-img.png";
+import providersImg from "@/public/images/common/logo.png";
 // import searchCasino from "./_components/search-casino";
 import GameCarousel, {
   GameCarouselHandle,
@@ -10,6 +11,7 @@ import GameCarousel, {
 import Banner from "../_components/re-usable/banner";
 import bannerImg from "@/public/images/common/banner-img.png";
 import CasinoTab, { type CasinoTabKey } from "./_components/casino-tab";
+import ProvidersCarousel from "./_components/providers-carosel";
 
 const games = [
   {
@@ -110,6 +112,32 @@ const gameShows = [
   },
   {
     image: gameCardImage,
+    title: "LIMBO",
+    multiplier: "500",
+    players: "4,240",
+  },
+];
+const providers = [
+  {
+    image: providersImg,
+    title: "LIMBO",
+    multiplier: "500",
+    players: "2,110",
+  },
+  {
+    image: providersImg,
+    title: "LIMBO",
+    multiplier: "500",
+    players: "3,410",
+  },
+  {
+    image: providersImg,
+    title: "LIMBO",
+    multiplier: "500",
+    players: "1,110",
+  },
+  {
+    image: providersImg,
     title: "LIMBO",
     multiplier: "500",
     players: "4,240",
@@ -292,6 +320,7 @@ export default function CasinoPage() {
       slots: filterByQuery(slots),
       liveCasino: filterByQuery(liveCasino),
       gameShows: filterByQuery(gameShows),
+      providers: filterByQuery(providers),
       bingo: filterByQuery(bingo),
       bonusBuy: filterByQuery(bonusBuy),
       blackJack: filterByQuery(blackJack),
@@ -396,6 +425,31 @@ export default function CasinoPage() {
             />
           </div>
         ) : null}
+
+        {/* poker carosel */}
+        {showLobby ? (
+          <div className="mt-5">
+            <GameCarousel
+              ref={carouselRef}
+              title="Poker"
+              titleIcon={casinoIcon}
+              games={filtered.gameShows}
+            />
+          </div>
+        ) : null}
+
+        {/* providers  carosel*/}
+        {showLobby ? (
+          <div className="mt-10">
+            <ProvidersCarousel
+              ref={carouselRef}
+              title="Providers"
+              titleIcon={casinoIcon}
+              games={filtered.providers}
+            />
+          </div>
+        ) : null}
+
         {/*  Bingo carosel */}
         {showLobby ? (
           <div className="mt-5">

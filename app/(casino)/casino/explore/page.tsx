@@ -2,6 +2,7 @@ import React from "react";
 import ProvidersSearch from "./_components/providers-search";
 import GameCard from "../_components/re-usable/game-card";
 import gameCardImage from "@/public/images/common/game-card-img.png";
+import SearchFilters from "./_components/search-filters";
 
 
 const games = [
@@ -34,6 +35,7 @@ const games = [
 export default function ExplorePage() {
   return (
     <div>
+      <SearchFilters />
     <div className="p-2 text-white">
       <div className="carousel-container">
           <div className="carousel relative">

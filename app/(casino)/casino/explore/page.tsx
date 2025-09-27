@@ -12,7 +12,7 @@ const generateGames = () => {
   const gameTitles = ["LIMBO", "PLINKO", "CRASH", "MINES", "DIAMOND", "BLACKJACK", "ROULETTE", "SLOTS"];
   const multipliers = ["500", "1000", "250", "750", "100", "50", "200", "300"];
   
-  return Array.from({ length: 90.00 }, (_, index) => ({
+  return Array.from({ length: 9000 }, (_, index) => ({
     image: gameCardImage,
     title: gameTitles[index % gameTitles.length],
     multiplier: multipliers[index % multipliers.length],
@@ -38,7 +38,7 @@ export default function ExplorePage() {
       
       {/* Games Grid */}
       <div className="px-4 py-6">
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+        <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
           {visibleGames.map((game, index) => (
             <div key={index} className="w-full">
               <GameCard gameData={game} />

@@ -380,8 +380,10 @@ export default function CasinoPage() {
             </div>
           </div>
           <CasinoTab activeTab={activeTab} onChange={setActiveTab} />
+
+          {/* hot game */}
           {showHot ? (
-            <div className=" mt-5 px-10">
+            <div className=" mt-5">
               <GameCarousel
                 ref={carouselRef}
                 title="Hot Games"
@@ -394,7 +396,7 @@ export default function CasinoPage() {
 
         {/* slots carosel */}
         {showLobby ? (
-          <div className="mt-5">
+          <div className="mt-10">
             <GameCarousel
               ref={carouselRef}
               title="Slots"
@@ -405,7 +407,7 @@ export default function CasinoPage() {
         ) : null}
         {/*  Live Casino carosel */}
         {showLobby ? (
-          <div className="mt-5">
+          <div className="mt-10">
             <GameCarousel
               ref={carouselRef}
               title=" Live Casino"
@@ -416,7 +418,7 @@ export default function CasinoPage() {
         ) : null}
         {/* game shows carosel */}
         {showLobby ? (
-          <div className="mt-5">
+          <div className="mt-10">
             <GameCarousel
               ref={carouselRef}
               title="Game Shows"
@@ -428,7 +430,7 @@ export default function CasinoPage() {
 
         {/* poker carosel */}
         {showLobby ? (
-          <div className="mt-5">
+          <div className="mt-10">
             <GameCarousel
               ref={carouselRef}
               title="Poker"
@@ -452,7 +454,7 @@ export default function CasinoPage() {
 
         {/*  Bingo carosel */}
         {showLobby ? (
-          <div className="mt-5">
+          <div className="mt-10">
             <GameCarousel
               ref={carouselRef}
               title="Bingo"
@@ -463,7 +465,7 @@ export default function CasinoPage() {
         ) : null}
         {/* bonud buy carosel */}
         {showLobby ? (
-          <div className="mt-5">
+          <div className="mt-10">
             <GameCarousel
               ref={carouselRef}
               title="Bonus Buy"
@@ -474,7 +476,7 @@ export default function CasinoPage() {
         ) : null}
         {/* black jack carosel */}
         {showLobby ? (
-          <div className="mt-5">
+          <div className="mt-10">
             <GameCarousel
               ref={carouselRef}
               title="Blackjack"
@@ -483,9 +485,23 @@ export default function CasinoPage() {
             />
           </div>
         ) : null}
+
+         {/* Themes carosel*/}
+         {showLobby ? (
+          <div className="mt-10">
+            <ProvidersCarousel
+              ref={carouselRef}
+              title="Themes"
+              titleIcon={casinoIcon}
+              games={filtered.providers}
+            />
+          </div>
+        ) : null}
+
+
         {/* table games carosel */}
         {showLobby ? (
-          <div className="mt-5">
+          <div className="mt-10">
             <GameCarousel
               ref={carouselRef}
               title="Table Games"
@@ -496,7 +512,7 @@ export default function CasinoPage() {
         ) : null}
         {/* new exclusive carosel */}
         {showLobby ? (
-          <div className="mt-5">
+          <div className="mt-10">
             <GameCarousel
               ref={carouselRef}
               title="Exclusive"
@@ -507,7 +523,7 @@ export default function CasinoPage() {
         ) : null}
         {/* new releases carosel */}
         {showNew ? (
-          <div className="mt-5">
+          <div className="mt-10">
             <GameCarousel
               ref={carouselRef}
               title="New Releases"

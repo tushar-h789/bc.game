@@ -486,8 +486,8 @@ export default function CasinoPage() {
           </div>
         ) : null}
 
-         {/* Themes carosel*/}
-         {showLobby ? (
+        {/* Themes carosel*/}
+        {showLobby ? (
           <div className="mt-10">
             <ProvidersCarousel
               ref={carouselRef}
@@ -497,7 +497,6 @@ export default function CasinoPage() {
             />
           </div>
         ) : null}
-
 
         {/* table games carosel */}
         {showLobby ? (

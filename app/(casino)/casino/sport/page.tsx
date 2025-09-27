@@ -8,6 +8,7 @@ import ReUsableSportsSlider, {
 import Banner from "../_components/re-usable/banner";
 import PreMatch from "./_components/pre-match";
 import bannerImg from "@/public/images/common/banner-img.png";
+import SportsHeader from "./_components/sports-header";
 
 const matches: MatchSlideData[] = [
   {
@@ -42,6 +43,9 @@ const matches: MatchSlideData[] = [
 export default function Page() {
   return (
     <div>
+      <div>
+        <SportsHeader />
+      </div>
       <div className="flex items-center justify-center mx-2">
         <Banner
           title="Stay Untamed"
@@ -51,8 +55,8 @@ export default function Page() {
           imageSrc={bannerImg}
         />
       </div>
-      <div className=" p-4">
-        <div className="relative w-full max-w-sm">
+      <div className="container p-4">
+        <div className="relative w-full">
           <span className="absolute inset-y-0 left-3 flex items-center text-gray-400">
             <svg
               xmlns="http://www.w3.org/2000/svg"

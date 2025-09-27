@@ -9,6 +9,7 @@ import Banner from "../_components/re-usable/banner";
 import PreMatch from "./_components/pre-match";
 import bannerImg from "@/public/images/common/banner-img.png";
 import SportsHeader from "./_components/sports-header";
+import SportsItems from "./_components/sports-items";
 
 const matches: MatchSlideData[] = [
   {
@@ -55,6 +56,7 @@ export default function Page() {
           imageSrc={bannerImg}
         />
       </div>
+      {/* Search */}
       <div className="container p-4">
         <div className="relative w-full">
           <span className="absolute inset-y-0 left-3 flex items-center text-gray-400">
@@ -80,6 +82,10 @@ export default function Page() {
             className="w-full rounded-md bg-[#213744] pl-10 pr-4 py-2 text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
+      </div>
+
+      <div>
+        <SportsItems />
       </div>
 
       <div className="p-1">

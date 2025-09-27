@@ -4,14 +4,14 @@ import groupImg from "@/public/images/sports/group.png";
 import PlayImg from "@/public/images/sports/play.png";
 
 const headerItem = [
-  { id: 1, image: groupImg, title: "Lobby" },
-  { id: 2, image: PlayImg, title: "Live" },
-  { id: 3, image: groupImg, title: "My Bets" },
-  { id: 4, image: groupImg, title: "Favorites" },
-  { id: 5, image: groupImg, title: "Starting soon" },
+  { id: 1, image: groupImg, title: "All" },
+  { id: 2, image: PlayImg, title: "Football" },
+  { id: 3, image: groupImg, title: "Tennis" },
+  { id: 4, image: groupImg, title: "Basketball" },
+  { id: 5, image: groupImg, title: "Volleyball" },
 ];
 
-export default function SportsHeader() {
+export default function SportsItems() {
   return (
     <div className="w-full bg-gray-900 py-3">
       <div className="container flex items-center justify-around">
